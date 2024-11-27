@@ -22,3 +22,9 @@ rad.json
 TestResults.xml
 /.vs/NightDrive
 /bin/Debug
+/obj/Debug/TempPE
+/.vs
+/obj/Debug/NightDrive.csproj.GenerateResource.cache
+/obj/Debug/NightDrive.csproj.CoreCompileInputs.cache
+/obj/Debug/NightDrive.exe
+/obj/Debug/NightDrive.pdb
