@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3E88A280-2A26-4085-B78B-4D2C7F4CB3A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NightDrive</RootNamespace>
+    <AssemblyName>NightDrive</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>9.0</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sources\TextEditor\TextEditorStartup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\_Enums\PictureAction.cs" />
+    <Compile Include="Sources\_Enums\FileEncoding.cs" />
+    <Compile Include="Sources\_Enums\Theme.cs" />
+    <Compile Include="Sources\_Enums\CustomBoxButton.cs" />
+    <Compile Include="Sources\_Enums\CustomBoxIcon.cs" />
+    <Compile Include="Sources\_Enums\FileFormat.cs" />
+    <Compile Include="Sources\_Enums\LogLevel.cs" />
+    <Compile Include="Sources\Helpers\Interface\DarkColorTable.cs" />
+    <Compile Include="Sources\Helpers\Interface\FontEx.cs" />
+    <Compile Include="Sources\Helpers\Interface\LightColorTable.cs" />
+    <Compile Include="Sources\Helpers\Sizes.cs" />
+    <Compile Include="Sources\Helpers\Tools.cs" />
+    <Compile Include="Sources\Helpers\Paths.cs" />
+    <Compile Include="Sources\Helpers\CustomDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Helpers\Logger.cs" />
+    <Compile Include="Sources\ImageEditor\ButtonEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\ImageEditor\PictureBoxEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\TextEditor\Actions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\ImageEditor\ImageEditorStartup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\TextEditor\Events\OtherEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\TextEditor\Events\MainMenuEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\TextEditor\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Startup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\Startup.Designer.cs">
+      <DependentUpon>Startup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\TextEditor\Events\ToolStripEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\_Models\SettingsModel.cs" />
+    <Compile Include="Sources\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\_Models\LastFileModel.cs" />
+    <Compile Include="Sources\FileEx.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Sources\Helpers\CustomDialogBox.resx">
+      <DependentUpon>CustomDialogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sources\Startup.resx">
+      <DependentUpon>Startup.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="config\lastFileConfig.json" />
+    <None Include="config\settings.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Saves\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppIcon.ico" />
+    <None Include="Resources\Pictures\AlignLeftDark.png" />
+    <None Include="Resources\Pictures\AlignCenterDark.png" />
+    <None Include="Resources\Pictures\AlignRightDark.png" />
+    <None Include="Resources\Pictures\AlignRight.png" />
+    <None Include="Resources\Pictures\AlignLeft.png" />
+    <None Include="Resources\Pictures\AlignCenter.png" />
+    <None Include="Resources\Pictures\UnderlineDark.png" />
+    <None Include="Resources\Pictures\ItalicDark.png" />
+    <None Include="Resources\Pictures\BoldDark.png" />
+    <None Include="Resources\Pictures\Italic.png" />
+    <None Include="Resources\Pictures\Bold.png" />
+    <None Include="Resources\Pictures\Underline.png" />
+    <None Include="Resources\Pictures\SaveAsDark.png" />
+    <None Include="Resources\Pictures\SaveDark.png" />
+    <None Include="Resources\Pictures\OptionsDark.png" />
+    <None Include="Resources\Pictures\PreviousDark.png" />
+    <None Include="Resources\Pictures\NextDark.png" />
+    <None Include="Resources\Pictures\OpenDark.png" />
+    <None Include="Resources\Pictures\NewDark.png" />
+    <None Include="Resources\Pictures\EraseDark.png" />
+    <None Include="Resources\Pictures\MenuDark.png" />
+    <None Include="Resources\Cursors\black_select.cur" />
+    <None Include="Resources\Cursors\black_arrow.cur" />
+    <None Include="Resources\Pictures\Previous.png" />
+    <None Include="Resources\Pictures\Next.png" />
+    <None Include="Resources\Pictures\SaveAs.png" />
+    <None Include="Resources\Pictures\Open.png" />
+    <None Include="Resources\Pictures\Erase.png" />
+    <None Include="Resources\Pictures\AppIcon.ico" />
+    <None Include="Resources\Pictures\Save.png" />
+    <None Include="Resources\Pictures\Options.png" />
+    <None Include="Resources\Pictures\New.png" />
+    <None Include="Resources\Pictures\Menu.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
