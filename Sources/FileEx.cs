@@ -319,7 +319,6 @@ namespace NightDrive
                         File.Delete(this.AbsolutePath);
                     }
                     
-
                     // Save it at the given path
                     toSaveBitmap.Save(this.AbsolutePath, ImageFormat.Jpeg);
                     this.IsSaved = true;

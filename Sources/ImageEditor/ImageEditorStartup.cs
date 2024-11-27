@@ -47,8 +47,7 @@ namespace NightDrive
         private void InitializeImageEditor()
         {
             // PictureBox default location & size
-            
-            this.PictureBox.Size = new Size(760 - 87, 479);
+            this.PictureBox.Size = new Size(760 - 87, 479);  // 87 is the button panel size
             this.PictureBox.Location = new Point(12, 57);
             this.RichTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 

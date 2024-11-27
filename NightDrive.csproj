@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sources\ImageEditor\ImageActions.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Sources\TextEditor\TextEditorStartup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,7 +82,7 @@
     <Compile Include="Sources\ImageEditor\PictureBoxEvents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sources\TextEditor\Actions.cs">
+    <Compile Include="Sources\TextEditor\TextActions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sources\ImageEditor\ImageEditorStartup.cs">
@@ -91,7 +94,7 @@
     <Compile Include="Sources\TextEditor\Events\MainMenuEvents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sources\TextEditor\Settings.cs">
+    <Compile Include="Sources\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sources\Startup.cs">

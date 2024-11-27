@@ -538,6 +538,7 @@ namespace NightDrive
             // PictureBox
             // 
             this.PictureBox.BackColor = System.Drawing.Color.White;
+            this.PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PictureBox.Location = new System.Drawing.Point(57, 82);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Size = new System.Drawing.Size(573, 428);
