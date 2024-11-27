@@ -28,3 +28,6 @@ TestResults.xml
 /obj/Debug/NightDrive.csproj.CoreCompileInputs.cache
 /obj/Debug/NightDrive.exe
 /obj/Debug/NightDrive.pdb
+/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/.gitignore
+/obj/Debug/NightDrive.csproj.AssemblyReference.cache
