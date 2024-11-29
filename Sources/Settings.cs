@@ -253,6 +253,20 @@ namespace NightDrive
                     // Apply customized dark renderers
                     this.MainToolStrip.Renderer = new ToolStripProfessionalRenderer(new DarkColorTable());
                     this.MainMenuStrip.Renderer = new ToolStripProfessionalRenderer(new DarkColorTable());
+
+                    /*
+                     * Image edition features
+                     */
+
+                    this.PencilButton.BackColor = MainForm.DarkRichTextBoxBackColor;
+                    this.PencilButton.ForeColor = MainForm.DarkMenuStripForeColor;
+
+                    this.EraserButton.BackColor = MainForm.DarkRichTextBoxBackColor;
+                    this.EraserButton.ForeColor = MainForm.DarkMenuStripForeColor;
+
+                    this.ClearButton.BackColor = MainForm.DarkRichTextBoxBackColor;
+                    this.ClearButton.ForeColor = MainForm.DarkMenuStripForeColor;
+
                     break;
 
                 case Theme.Default:
@@ -307,6 +321,20 @@ namespace NightDrive
                     // Set back default renderers
                     this.MainToolStrip.Renderer = new ToolStripProfessionalRenderer(new LightColorTable());
                     this.MainMenuStrip.Renderer = new ToolStripProfessionalRenderer(new LightColorTable());
+
+                    /*
+                     * Image edition features
+                     */
+
+                    this.PencilButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.PencilButton.ForeColor = MainForm.DefaultMenuStripForeColor;
+
+                    this.EraserButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.EraserButton.ForeColor = MainForm.DefaultMenuStripForeColor;
+
+                    this.ClearButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.ClearButton.ForeColor = MainForm.DefaultMenuStripForeColor;
+
                     break;
             }
 

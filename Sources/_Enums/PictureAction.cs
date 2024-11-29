@@ -11,5 +11,10 @@
         /// Pencil is selected
         /// </summary>
         Pencil = 1,
+
+        /// <summary>
+        /// Eraser is selected
+        /// </summary>
+        Eraser = 2,
     }
 }

@@ -24,7 +24,15 @@ namespace NightDrive
         internal Point PictureX;
         internal Point PictureY;
 
-        internal Pen PicturePen = new Pen(Color.Black, 1);
+        /// <summary>
+        /// Pen used to draw.
+        /// </summary>
+        internal Pen DrawingPen = new Pen(Color.Black, 1);
+
+        /// <summary>
+        /// Pen used to erase.
+        /// </summary>
+        internal Pen EraserPen = new Pen(Color.White, 15);
 
         /// <summary>
         /// Selected action to perform.

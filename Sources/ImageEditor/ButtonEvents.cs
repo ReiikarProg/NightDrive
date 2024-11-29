@@ -19,6 +19,12 @@ namespace NightDrive
             this.SelectedAction = PictureAction.Pencil;
         }
 
+        private void EraserButton_Click(object sender, EventArgs e)
+        {
+            // Activate the eraser
+            this.SelectedAction = PictureAction.Eraser;
+        }
+
         /// <summary>
         /// Clear the picture box and select then unselect any action.
         /// </summary>

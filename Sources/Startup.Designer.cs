@@ -82,6 +82,7 @@ namespace NightDrive
             this.FileEncodingLabel = new System.Windows.Forms.Label();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.PicturePanel = new System.Windows.Forms.Panel();
+            this.EraserButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.PencilButton = new System.Windows.Forms.Button();
             this.MainMenuStrip.SuspendLayout();
@@ -537,6 +538,8 @@ namespace NightDrive
             // 
             // PictureBox
             // 
+            this.PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.PictureBox.BackColor = System.Drawing.Color.White;
             this.PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PictureBox.Location = new System.Drawing.Point(57, 82);
@@ -544,19 +547,33 @@ namespace NightDrive
             this.PictureBox.Size = new System.Drawing.Size(573, 428);
             this.PictureBox.TabIndex = 6;
             this.PictureBox.TabStop = false;
-            this.PictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseDown);
-            this.PictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseMove);
-            this.PictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseUp);
+            this.PictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOnMouseDown);
+            this.PictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOnMouseMove);
+            this.PictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOnMouseUp);
             // 
             // PicturePanel
             // 
+            this.PicturePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PicturePanel.BackColor = System.Drawing.Color.Silver;
+            this.PicturePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PicturePanel.Controls.Add(this.EraserButton);
             this.PicturePanel.Controls.Add(this.ClearButton);
             this.PicturePanel.Controls.Add(this.PencilButton);
             this.PicturePanel.Location = new System.Drawing.Point(685, 57);
             this.PicturePanel.Name = "PicturePanel";
             this.PicturePanel.Size = new System.Drawing.Size(87, 479);
             this.PicturePanel.TabIndex = 7;
+            // 
+            // EraserButton
+            // 
+            this.EraserButton.Location = new System.Drawing.Point(19, 90);
+            this.EraserButton.Name = "EraserButton";
+            this.EraserButton.Size = new System.Drawing.Size(46, 39);
+            this.EraserButton.TabIndex = 2;
+            this.EraserButton.Text = "Eraser";
+            this.EraserButton.UseVisualStyleBackColor = true;
+            this.EraserButton.Click += new System.EventHandler(this.EraserButton_Click);
             // 
             // ClearButton
             // 
@@ -665,6 +682,7 @@ namespace NightDrive
         private Button PencilButton;
         internal PictureBox PictureBox;
         private Button ClearButton;
+        private Button EraserButton;
     }
 }
 

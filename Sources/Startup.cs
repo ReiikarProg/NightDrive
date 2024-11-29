@@ -210,7 +210,6 @@ namespace NightDrive
                 Logger.Log(LogLevel.Warning, "Failed to restore last opened file, default font will be used");
             }
         }
-
-       
+     
     }
 }

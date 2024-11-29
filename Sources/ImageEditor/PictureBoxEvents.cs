@@ -7,7 +7,12 @@ namespace NightDrive
 {
     public partial class MainForm : Form
     {
-        private void PictureBox_MouseDown(object sender, MouseEventArgs e)
+        /// <summary>
+        /// Called when mouse enters picture box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PictureBoxOnMouseDown(object sender, MouseEventArgs e)
         {
             // Entering picture box
             Console.WriteLine($"Entering picture box, shouldPaint: {this.ShouldPaint}");
@@ -22,15 +27,28 @@ namespace NightDrive
             this.PictureY = e.Location;
         }
 
-        private void PictureBox_MouseMove(object sender, MouseEventArgs e)
+        /// <summary>
+        /// Called when left clicK is still applied on the picture box and the mouse is moving.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PictureBoxOnMouseMove(object sender, MouseEventArgs e)
         {
             if (this.ShouldPaint)
             {
-                // Pencil is selected
+                // Pencil is selected, draw
                 if (this.SelectedAction == PictureAction.Pencil)
                 {
                     this.PictureX = e.Location;
-                    this.PictureGraphics.DrawLine(this.PicturePen, this.PictureX, this.PictureY);
+                    this.PictureGraphics.DrawLine(this.DrawingPen, this.PictureX, this.PictureY);
+                    this.PictureY = this.PictureX;
+                }
+
+                // Eraser is selected, erase
+                if (this.SelectedAction == PictureAction.Eraser)
+                {
+                    this.PictureX = e.Location;
+                    this.PictureGraphics.DrawLine(this.EraserPen, this.PictureX, this.PictureY);
                     this.PictureY = this.PictureX;
                 }
 
@@ -39,7 +57,12 @@ namespace NightDrive
             }
         }
 
-        private void PictureBox_MouseUp(object sender, MouseEventArgs e)
+        /// <summary>
+        /// Called when mouse leaves picture box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PictureBoxOnMouseUp(object sender, MouseEventArgs e)
         {   
             Console.WriteLine($"Leaving picture box,  shouldPaint: {this.ShouldPaint}");
 
