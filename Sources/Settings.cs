@@ -78,11 +78,8 @@ namespace NightDrive
             this.RichTextBox.Height = this.Height - 121;
 
             // Same with the picture box
-            this.PictureBox.Width = this.Width - 40 - 87 /* Button panel size */;
+            this.PictureBox.Width = this.Width - 40 - this.PicturePanel.Width /* Button panel width */;
             this.PictureBox.Height = this.Height - 121;
-
-            // Panel location
-            // this.PicturePanel.Location = new Point()
         }
 
         /// <summary>
@@ -258,6 +255,12 @@ namespace NightDrive
                      * Image edition features
                      */
 
+                    this.PicturePanel.ForeColor = MainForm.DarkMenuStripForeColor;
+                    this.PicturePanel.BackColor = MainForm.DarkRichTextBoxBackColor;
+
+                    this.PictureBox.ForeColor = MainForm.DarkRichTextBoxForeColor;
+                    this.PictureBox.BackColor = MainForm.DarkRichTextBoxBackColor;
+
                     this.PencilButton.BackColor = MainForm.DarkRichTextBoxBackColor;
                     this.PencilButton.ForeColor = MainForm.DarkMenuStripForeColor;
 
@@ -266,6 +269,12 @@ namespace NightDrive
 
                     this.ClearButton.BackColor = MainForm.DarkRichTextBoxBackColor;
                     this.ClearButton.ForeColor = MainForm.DarkMenuStripForeColor;
+
+                    this.ZoomLabel.BackColor = MainForm.DarkRichTextBoxBackColor;
+                    this.ZoomLabel.ForeColor = MainForm.DarkMenuStripForeColor;
+
+                    this.ZoomButton.BackColor = MainForm.DarkRichTextBoxBackColor;
+                    this.ZoomButton.ForeColor = MainForm.DarkMenuStripForeColor;
 
                     break;
 
@@ -326,6 +335,12 @@ namespace NightDrive
                      * Image edition features
                      */
 
+                    this.PicturePanel.ForeColor = MainForm.DefaultMenuStripForeColor;
+                    this.PicturePanel.BackColor = MainForm.DefaultRichTextBoxBackColor;
+
+                    this.PictureBox.ForeColor = MainForm.DefaultRichTextBoxForeColor;
+                    this.PictureBox.BackColor = Color.FromArgb(250, 250, 250);
+
                     this.PencilButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
                     this.PencilButton.ForeColor = MainForm.DefaultMenuStripForeColor;
 
@@ -334,6 +349,12 @@ namespace NightDrive
 
                     this.ClearButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
                     this.ClearButton.ForeColor = MainForm.DefaultMenuStripForeColor;
+
+                    this.ZoomLabel.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.ZoomLabel.ForeColor = MainForm.DefaultMenuStripForeColor;
+
+                    this.ZoomButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.ZoomButton.ForeColor = MainForm.DefaultMenuStripForeColor;
 
                     break;
             }

@@ -82,7 +82,7 @@
     <Compile Include="Sources\ImageEditor\PictureBoxEvents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sources\TextEditor\TextActions.cs">
+    <Compile Include="Sources\Actions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sources\ImageEditor\ImageEditorStartup.cs">

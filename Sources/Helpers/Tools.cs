@@ -4,11 +4,54 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using NightDrive.Enums;
+using System.Drawing.Drawing2D;
+using System.Drawing;
 
 namespace NightDrive.Helpers
 {
     public static class Tools
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="imageToResize"></param>
+        /// <param name="pointToDraw"></param>
+        /// <param name="size"></param>
+        internal static Image ResizeImage(Image imageToResize, Point pointToDraw, Size size)
+        {
+            if (imageToResize == null)
+            {
+                throw new ArgumentNullException(nameof(imageToResize));
+            }
+
+            Size sourceSize = imageToResize.Size;
+            Logger.Log(LogLevel.Info, $"Resizing image: ({sourceSize.Width},{sourceSize.Height}) => ({size.Width},{size.Height})");
+
+            // Get the aspect ratio
+            float nPercent, nPercentW, nPercentH = 0;
+            nPercentW = ((float)size.Width / (float)sourceSize.Width);
+            nPercentH = ((float)size.Height / (float)sourceSize.Height);
+            nPercent = Math.Min(nPercentW, nPercentH);
+
+            // New size
+            int destWidth = (int)(sourceSize.Width * nPercent);
+            int destHeight = (int)(sourceSize.Height * nPercent);
+            Bitmap bitmap = new Bitmap(destWidth, destHeight);
+            using (Graphics graph = Graphics.FromImage((Image)bitmap))
+            {
+                graph.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                // Draw the image
+                graph.DrawImage(imageToResize,
+                    pointToDraw.X,
+                    pointToDraw.Y,
+                    destWidth,
+                    destHeight);
+                
+            }
+
+            return (Image) bitmap;
+        }
+
         /// <summary>
         /// CreateEmptyFile and enable a con text menu on a given RichTextBox
         /// </summary>

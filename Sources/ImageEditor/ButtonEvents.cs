@@ -19,7 +19,7 @@ namespace NightDrive
             this.SelectedAction = PictureAction.Pencil;
         }
 
-        private void EraserButton_Click(object sender, EventArgs e)
+        private void EraserButtonOnClick(object sender, EventArgs e)
         {
             // Activate the eraser
             this.SelectedAction = PictureAction.Eraser;
@@ -40,6 +40,16 @@ namespace NightDrive
                 Logger.Log(LogLevel.Info, "Successfully clear Picture box");
                 this.Clear();
             }
+        }
+
+        /// <summary>
+        /// Validate the zoom value selected at the dropdown menu and apply it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ZoomButtonOnClick(object sender, EventArgs e)
+        {
+            this.Zoom(Convert.ToInt32(this.ZoomUpDown.Text));
         }
     }
 }

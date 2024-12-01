@@ -2,6 +2,7 @@
 using NightDrive.Enums;
 using System.Windows.Forms;
 using NightDrive.Helpers;
+using System.Drawing;
 
 namespace NightDrive
 {
@@ -15,7 +16,7 @@ namespace NightDrive
         private void PictureBoxOnMouseDown(object sender, MouseEventArgs e)
         {
             // Entering picture box
-            Console.WriteLine($"Entering picture box, shouldPaint: {this.ShouldPaint}");
+            // Console.WriteLine($"Entering picture box, shouldPaint: {this.ShouldPaint}");
 
             if (this.CurrentFile is { IsSaved: true })
             {
@@ -64,7 +65,7 @@ namespace NightDrive
         /// <param name="e"></param>
         private void PictureBoxOnMouseUp(object sender, MouseEventArgs e)
         {   
-            Console.WriteLine($"Leaving picture box,  shouldPaint: {this.ShouldPaint}");
+            // Console.WriteLine($"Leaving picture box,  shouldPaint: {this.ShouldPaint}");
 
             this.ShouldPaint = false;
         }

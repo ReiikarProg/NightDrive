@@ -82,6 +82,9 @@ namespace NightDrive
             this.FileEncodingLabel = new System.Windows.Forms.Label();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.PicturePanel = new System.Windows.Forms.Panel();
+            this.ZoomButton = new System.Windows.Forms.Button();
+            this.ZoomLabel = new System.Windows.Forms.Label();
+            this.ZoomUpDown = new System.Windows.Forms.NumericUpDown();
             this.EraserButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.PencilButton = new System.Windows.Forms.Button();
@@ -89,6 +92,7 @@ namespace NightDrive
             this.MainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.PicturePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ZoomUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenuStrip
@@ -540,9 +544,9 @@ namespace NightDrive
             // 
             this.PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.PictureBox.BackColor = System.Drawing.Color.White;
+            this.PictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PictureBox.Location = new System.Drawing.Point(57, 82);
+            this.PictureBox.Location = new System.Drawing.Point(44, 82);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Size = new System.Drawing.Size(573, 428);
             this.PictureBox.TabIndex = 6;
@@ -557,27 +561,71 @@ namespace NightDrive
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PicturePanel.BackColor = System.Drawing.Color.Silver;
             this.PicturePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PicturePanel.Controls.Add(this.ZoomButton);
+            this.PicturePanel.Controls.Add(this.ZoomLabel);
+            this.PicturePanel.Controls.Add(this.ZoomUpDown);
             this.PicturePanel.Controls.Add(this.EraserButton);
             this.PicturePanel.Controls.Add(this.ClearButton);
             this.PicturePanel.Controls.Add(this.PencilButton);
-            this.PicturePanel.Location = new System.Drawing.Point(685, 57);
+            this.PicturePanel.Location = new System.Drawing.Point(645, 57);
             this.PicturePanel.Name = "PicturePanel";
-            this.PicturePanel.Size = new System.Drawing.Size(87, 479);
+            this.PicturePanel.Size = new System.Drawing.Size(127, 479);
             this.PicturePanel.TabIndex = 7;
+            // 
+            // ZoomButton
+            // 
+            this.ZoomButton.Location = new System.Drawing.Point(71, 388);
+            this.ZoomButton.Name = "ZoomButton";
+            this.ZoomButton.Size = new System.Drawing.Size(41, 20);
+            this.ZoomButton.TabIndex = 5;
+            this.ZoomButton.Text = "Ok";
+            this.ZoomButton.UseVisualStyleBackColor = true;
+            this.ZoomButton.Click += new System.EventHandler(this.ZoomButtonOnClick);
+            // 
+            // ZoomLabel
+            // 
+            this.ZoomLabel.AutoSize = true;
+            this.ZoomLabel.Location = new System.Drawing.Point(35, 372);
+            this.ZoomLabel.Name = "ZoomLabel";
+            this.ZoomLabel.Size = new System.Drawing.Size(51, 13);
+            this.ZoomLabel.TabIndex = 4;
+            this.ZoomLabel.Text = "Zoom (%)";
+            // 
+            // ZoomUpDown
+            // 
+            this.ZoomUpDown.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.ZoomUpDown.Location = new System.Drawing.Point(14, 388);
+            this.ZoomUpDown.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.ZoomUpDown.Name = "ZoomUpDown";
+            this.ZoomUpDown.Size = new System.Drawing.Size(51, 20);
+            this.ZoomUpDown.TabIndex = 3;
+            this.ZoomUpDown.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             // 
             // EraserButton
             // 
-            this.EraserButton.Location = new System.Drawing.Point(19, 90);
+            this.EraserButton.Location = new System.Drawing.Point(38, 96);
             this.EraserButton.Name = "EraserButton";
             this.EraserButton.Size = new System.Drawing.Size(46, 39);
             this.EraserButton.TabIndex = 2;
             this.EraserButton.Text = "Eraser";
             this.EraserButton.UseVisualStyleBackColor = true;
-            this.EraserButton.Click += new System.EventHandler(this.EraserButton_Click);
+            this.EraserButton.Click += new System.EventHandler(this.EraserButtonOnClick);
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(19, 414);
+            this.ClearButton.Location = new System.Drawing.Point(38, 196);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(46, 39);
             this.ClearButton.TabIndex = 1;
@@ -587,7 +635,7 @@ namespace NightDrive
             // 
             // PencilButton
             // 
-            this.PencilButton.Location = new System.Drawing.Point(19, 25);
+            this.PencilButton.Location = new System.Drawing.Point(38, 23);
             this.PencilButton.Name = "PencilButton";
             this.PencilButton.Size = new System.Drawing.Size(46, 39);
             this.PencilButton.TabIndex = 0;
@@ -612,6 +660,7 @@ namespace NightDrive
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormOnClosing);
@@ -622,6 +671,8 @@ namespace NightDrive
             this.MainToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.PicturePanel.ResumeLayout(false);
+            this.PicturePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ZoomUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -683,6 +734,9 @@ namespace NightDrive
         internal PictureBox PictureBox;
         private Button ClearButton;
         private Button EraserButton;
+        private NumericUpDown ZoomUpDown;
+        private Button ZoomButton;
+        private Label ZoomLabel;
     }
 }
 

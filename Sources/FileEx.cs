@@ -241,29 +241,36 @@ namespace NightDrive
                             this.ParentMainForm.Text += line;
                         }
 
-                        Logger.Log(LogLevel.Info, "Successfully loaded .txt file");
+                        Logger.Log(LogLevel.Info, "[FileEx] - Successfully loaded .txt file");
                     }
                     else if (this.Format == FileFormat.RichText)
                     {
                         this.ParentMainForm.RichTextBox.Text = string.Empty;
                         this.ParentMainForm.RichTextBox.LoadFile(this.AbsolutePath, RichTextBoxStreamType.RichText);
-                        Logger.Log(LogLevel.Info, "Successfully loaded .rtf file");
+                        Logger.Log(LogLevel.Info, "[FileEx] - Successfully loaded .rtf file");
                     }
                     else if (this.Format == FileFormat.Image)
                     {
                         // Get the image from the file, then set it as well as its graphics
                         using (FileStream stream = new FileStream(this.AbsolutePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                         {
-                            this.ParentMainForm.PictureBox.Image = Image.FromStream(stream);
+                            // Get the image object
+                            Image image = Image.FromStream(stream);
+                            Logger.Log(LogLevel.Info, $"[FileEx] - Image size: {image.Size}");
+
+                            // Set the image in out box
+                            this.ParentMainForm.PictureBox.Image = image;
+                            this.ParentMainForm.OriginalImageSize = new Size(image.Width, image.Height);
+
                             this.ParentMainForm.PictureGraphics = Graphics.FromImage(this.ParentMainForm.PictureBox.Image);
                         }
                             
-                        Logger.Log(LogLevel.Info, "Successfully loaded .jpg file");
+                        Logger.Log(LogLevel.Info, "[FileEx] - Successfully loaded .jpg file");
                     }
                 }
                 else
                 {
-                    Logger.Log(LogLevel.Warning, $"Failed to load {this.AbsolutePath} as it doesn't exist");
+                    Logger.Log(LogLevel.Warning, $"[FileEx] - Failed to load {this.AbsolutePath} as it doesn't exist");
                 }
             }
             catch (Exception ex)
