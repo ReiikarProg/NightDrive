@@ -37,6 +37,8 @@ namespace NightDrive
         internal Point PictureX;
         internal Point PictureY;
 
+        internal int x, y, moveWidth, moveHeight, moveStartX, moveStartY;
+
         /// <summary>
         /// Pen used to draw.
         /// </summary>

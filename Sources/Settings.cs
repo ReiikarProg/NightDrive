@@ -270,6 +270,15 @@ namespace NightDrive
                     this.ClearButton.BackColor = MainForm.DarkRichTextBoxBackColor;
                     this.ClearButton.ForeColor = MainForm.DarkMenuStripForeColor;
 
+                    this.EllipseButton.BackColor = MainForm.DarkRichTextBoxBackColor;
+                    this.EllipseButton.ForeColor = MainForm.DarkMenuStripForeColor;
+
+                    this.RectangleButton.BackColor = MainForm.DarkRichTextBoxBackColor;
+                    this.RectangleButton.ForeColor = MainForm.DarkMenuStripForeColor;
+
+                    this.LineButton.BackColor = MainForm.DarkRichTextBoxBackColor;
+                    this.LineButton.ForeColor = MainForm.DarkMenuStripForeColor;
+
                     this.ZoomLabel.BackColor = MainForm.DarkRichTextBoxBackColor;
                     this.ZoomLabel.ForeColor = MainForm.DarkMenuStripForeColor;
 
@@ -336,7 +345,7 @@ namespace NightDrive
                      */
 
                     this.PicturePanel.ForeColor = MainForm.DefaultMenuStripForeColor;
-                    this.PicturePanel.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.PicturePanel.BackColor = Color.FromArgb(250, 250, 250);
 
                     this.PictureBox.ForeColor = MainForm.DefaultRichTextBoxForeColor;
                     this.PictureBox.BackColor = Color.FromArgb(250, 250, 250);
@@ -349,6 +358,15 @@ namespace NightDrive
 
                     this.ClearButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
                     this.ClearButton.ForeColor = MainForm.DefaultMenuStripForeColor;
+
+                    this.EllipseButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.EllipseButton.ForeColor = MainForm.DefaultMenuStripForeColor;
+
+                    this.RectangleButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.RectangleButton.ForeColor = MainForm.DefaultMenuStripForeColor;
+
+                    this.LineButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.LineButton.ForeColor = MainForm.DefaultMenuStripForeColor;
 
                     this.ZoomLabel.BackColor = MainForm.DefaultRichTextBoxBackColor;
                     this.ZoomLabel.ForeColor = MainForm.DefaultMenuStripForeColor;

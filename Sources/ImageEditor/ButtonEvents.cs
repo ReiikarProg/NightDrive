@@ -19,10 +19,48 @@ namespace NightDrive
             this.SelectedAction = PictureAction.Pencil;
         }
 
+        /// <summary>
+        /// Selecting the Eraser
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EraserButtonOnClick(object sender, EventArgs e)
         {
             // Activate the eraser
             this.SelectedAction = PictureAction.Eraser;
+        }
+
+        /// <summary>
+        /// Selecting line drawing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LineButtonOnClick(object sender, EventArgs e)
+        {
+            // Activate line drawing
+            this.SelectedAction = PictureAction.Line;
+        }
+
+        /// <summary>
+        /// Selecting ellipse drawing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EllipseButtonOnClick(object sender, EventArgs e)
+        {
+            // Activate the ellipse drawing
+            this.SelectedAction = PictureAction.Ellipse;
+        }
+
+        /// <summary>
+        /// Selecting rectangle drawing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectangleButtonOnClick(object sender, EventArgs e)
+        {
+            // Activate rectangle drawing
+            this.SelectedAction = PictureAction.Rectangle;
         }
 
         /// <summary>
