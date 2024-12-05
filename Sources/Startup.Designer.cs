@@ -581,33 +581,36 @@ namespace NightDrive
             // EllipseButton
             // 
             this.EllipseButton.BackColor = System.Drawing.Color.White;
-            this.EllipseButton.Location = new System.Drawing.Point(17, 203);
+            this.EllipseButton.BackgroundImage = global::NightDrive.Properties.Resources.Circle;
+            this.EllipseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.EllipseButton.Location = new System.Drawing.Point(12, 125);
             this.EllipseButton.Name = "EllipseButton";
-            this.EllipseButton.Size = new System.Drawing.Size(46, 39);
+            this.EllipseButton.Size = new System.Drawing.Size(45, 45);
             this.EllipseButton.TabIndex = 8;
-            this.EllipseButton.Text = "Elipse";
             this.EllipseButton.UseVisualStyleBackColor = false;
             this.EllipseButton.Click += new System.EventHandler(this.EllipseButtonOnClick);
             // 
             // RectangleButton
             // 
             this.RectangleButton.BackColor = System.Drawing.Color.White;
-            this.RectangleButton.Location = new System.Drawing.Point(17, 158);
+            this.RectangleButton.BackgroundImage = global::NightDrive.Properties.Resources.Rectangle;
+            this.RectangleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RectangleButton.Location = new System.Drawing.Point(69, 74);
             this.RectangleButton.Name = "RectangleButton";
-            this.RectangleButton.Size = new System.Drawing.Size(46, 39);
+            this.RectangleButton.Size = new System.Drawing.Size(45, 45);
             this.RectangleButton.TabIndex = 7;
-            this.RectangleButton.Text = "Rectangle";
             this.RectangleButton.UseVisualStyleBackColor = false;
             this.RectangleButton.Click += new System.EventHandler(this.RectangleButtonOnClick);
             // 
             // LineButton
             // 
             this.LineButton.BackColor = System.Drawing.Color.White;
-            this.LineButton.Location = new System.Drawing.Point(17, 113);
+            this.LineButton.BackgroundImage = global::NightDrive.Properties.Resources.Line;
+            this.LineButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.LineButton.Location = new System.Drawing.Point(12, 74);
             this.LineButton.Name = "LineButton";
-            this.LineButton.Size = new System.Drawing.Size(46, 39);
+            this.LineButton.Size = new System.Drawing.Size(45, 45);
             this.LineButton.TabIndex = 6;
-            this.LineButton.Text = "Line";
             this.LineButton.UseVisualStyleBackColor = false;
             this.LineButton.Click += new System.EventHandler(this.LineButtonOnClick);
             // 
@@ -656,33 +659,37 @@ namespace NightDrive
             // EraserButton
             // 
             this.EraserButton.BackColor = System.Drawing.Color.White;
-            this.EraserButton.Location = new System.Drawing.Point(17, 68);
+            this.EraserButton.BackgroundImage = global::NightDrive.Properties.Resources.Eraser;
+            this.EraserButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.EraserButton.Location = new System.Drawing.Point(69, 23);
             this.EraserButton.Name = "EraserButton";
-            this.EraserButton.Size = new System.Drawing.Size(46, 39);
+            this.EraserButton.Size = new System.Drawing.Size(45, 45);
             this.EraserButton.TabIndex = 2;
-            this.EraserButton.Text = "Eraser";
             this.EraserButton.UseVisualStyleBackColor = false;
             this.EraserButton.Click += new System.EventHandler(this.EraserButtonOnClick);
             // 
             // ClearButton
             // 
             this.ClearButton.BackColor = System.Drawing.Color.White;
-            this.ClearButton.Location = new System.Drawing.Point(12, 301);
+            this.ClearButton.BackgroundImage = global::NightDrive.Properties.Resources.Clear;
+            this.ClearButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClearButton.Location = new System.Drawing.Point(69, 125);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(46, 39);
+            this.ClearButton.Size = new System.Drawing.Size(45, 45);
             this.ClearButton.TabIndex = 1;
-            this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButtonOnClick);
             // 
             // PencilButton
             // 
             this.PencilButton.BackColor = System.Drawing.Color.White;
-            this.PencilButton.Location = new System.Drawing.Point(17, 23);
+            this.PencilButton.BackgroundImage = global::NightDrive.Properties.Resources.Pencil;
+            this.PencilButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PencilButton.Location = new System.Drawing.Point(12, 23);
+            this.PencilButton.Margin = new System.Windows.Forms.Padding(0);
             this.PencilButton.Name = "PencilButton";
-            this.PencilButton.Size = new System.Drawing.Size(46, 39);
+            this.PencilButton.Size = new System.Drawing.Size(45, 45);
             this.PencilButton.TabIndex = 0;
-            this.PencilButton.Text = "Pencil";
             this.PencilButton.UseVisualStyleBackColor = false;
             this.PencilButton.Click += new System.EventHandler(this.PencilButtonOnClick);
             // 

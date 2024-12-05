@@ -285,6 +285,14 @@ namespace NightDrive
                     this.ZoomButton.BackColor = MainForm.DarkRichTextBoxBackColor;
                     this.ZoomButton.ForeColor = MainForm.DarkMenuStripForeColor;
 
+                    // Images
+                    this.PencilButton.BackgroundImage = Properties.Resources.PencilDark;
+                    this.EraserButton.BackgroundImage = Properties.Resources.EraserDark;
+                    this.LineButton.BackgroundImage = Properties.Resources.LineDark;
+                    this.RectangleButton.BackgroundImage = Properties.Resources.RectangleDark;
+                    this.EllipseButton.BackgroundImage = Properties.Resources.CircleDark;
+                    this.ClearButton.BackgroundImage = Properties.Resources.ClearDark;
+
                     break;
 
                 case Theme.Default:
@@ -373,6 +381,14 @@ namespace NightDrive
 
                     this.ZoomButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
                     this.ZoomButton.ForeColor = MainForm.DefaultMenuStripForeColor;
+
+                    // Images
+                    this.PencilButton.BackgroundImage = Properties.Resources.Pencil;
+                    this.EraserButton.BackgroundImage = Properties.Resources.Eraser;
+                    this.LineButton.BackgroundImage = Properties.Resources.Line;
+                    this.RectangleButton.BackgroundImage = Properties.Resources.Rectangle;
+                    this.EllipseButton.BackgroundImage = Properties.Resources.Circle;
+                    this.ClearButton.BackgroundImage = Properties.Resources.Clear;
 
                     break;
             }

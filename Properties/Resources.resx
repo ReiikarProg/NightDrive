@@ -151,17 +151,41 @@
   <data name="BoldDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pictures\BoldDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\Circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CircleDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\CircleDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\Clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClearDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\ClearDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Erase" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pictures\Erase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EraseDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pictures\EraseDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Eraser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\Eraser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EraserDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\EraserDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Italic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pictures\Italic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ItalicDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pictures\ItalicDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\Line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LineDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\LineDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pictures\Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,11 +217,23 @@
   <data name="OptionsDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pictures\OptionsDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\Pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PencilDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\PencilDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pictures\Previous.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PreviousDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pictures\PreviousDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rectangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\Rectangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RectangleDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pictures\RectangleDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pictures\Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

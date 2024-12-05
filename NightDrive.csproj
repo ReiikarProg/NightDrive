@@ -139,6 +139,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppIcon.ico" />
+    <None Include="Resources\Pictures\RectangleDark.png" />
+    <None Include="Resources\Pictures\Rectangle.png" />
+    <None Include="Resources\Pictures\PencilDark.png" />
+    <None Include="Resources\Pictures\Pencil.png" />
+    <None Include="Resources\Pictures\LineDark.png" />
+    <None Include="Resources\Pictures\Line.png" />
+    <None Include="Resources\Pictures\EraserDark.png" />
+    <None Include="Resources\Pictures\Eraser.png" />
+    <None Include="Resources\Pictures\ClearDark.png" />
+    <None Include="Resources\Pictures\Clear.png" />
+    <None Include="Resources\Pictures\CircleDark.png" />
+    <None Include="Resources\Pictures\Circle.png" />
     <None Include="Resources\Pictures\AlignLeftDark.png" />
     <None Include="Resources\Pictures\AlignCenterDark.png" />
     <None Include="Resources\Pictures\AlignRightDark.png" />

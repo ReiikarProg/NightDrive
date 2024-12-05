@@ -173,6 +173,46 @@ namespace NightDrive.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Circle {
+            get {
+                object obj = ResourceManager.GetObject("Circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CircleDark {
+            get {
+                object obj = ResourceManager.GetObject("CircleDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Clear {
+            get {
+                object obj = ResourceManager.GetObject("Clear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ClearDark {
+            get {
+                object obj = ResourceManager.GetObject("ClearDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Erase {
             get {
                 object obj = ResourceManager.GetObject("Erase", resourceCulture);
@@ -193,6 +233,26 @@ namespace NightDrive.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Eraser {
+            get {
+                object obj = ResourceManager.GetObject("Eraser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EraserDark {
+            get {
+                object obj = ResourceManager.GetObject("EraserDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Italic {
             get {
                 object obj = ResourceManager.GetObject("Italic", resourceCulture);
@@ -206,6 +266,26 @@ namespace NightDrive.Properties {
         internal static System.Drawing.Bitmap ItalicDark {
             get {
                 object obj = ResourceManager.GetObject("ItalicDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Line {
+            get {
+                object obj = ResourceManager.GetObject("Line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LineDark {
+            get {
+                object obj = ResourceManager.GetObject("LineDark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,6 +393,26 @@ namespace NightDrive.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pencil {
+            get {
+                object obj = ResourceManager.GetObject("Pencil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PencilDark {
+            get {
+                object obj = ResourceManager.GetObject("PencilDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Previous {
             get {
                 object obj = ResourceManager.GetObject("Previous", resourceCulture);
@@ -326,6 +426,26 @@ namespace NightDrive.Properties {
         internal static System.Drawing.Bitmap PreviousDark {
             get {
                 object obj = ResourceManager.GetObject("PreviousDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RectangleDark {
+            get {
+                object obj = ResourceManager.GetObject("RectangleDark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
