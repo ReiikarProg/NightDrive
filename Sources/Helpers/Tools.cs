@@ -145,7 +145,7 @@ namespace NightDrive.Helpers
             {
                 FileFormat.Text => "Normal text file",
                 FileFormat.RichText => "Rich text file",
-                FileFormat.Image => "jpg file",
+                FileFormat.Image => "Image file",
                 _ => throw new Exception("Unsupported file format")
             };
 

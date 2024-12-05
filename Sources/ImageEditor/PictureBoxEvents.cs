@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using NightDrive.Enums;
 using System.Windows.Forms;
 using NightDrive.Helpers;
@@ -14,9 +15,6 @@ namespace NightDrive
         /// <param name="e"></param>
         private void PictureBoxOnMouseDown(object sender, MouseEventArgs e)
         {
-            // Entering picture box
-            // Console.WriteLine($"Entering picture box, shouldPaint: {this.ShouldPaint}");
-
             if (this.CurrentFile is { IsSaved: true })
             {
                 this.CurrentFile.IsSaved = false;
@@ -74,8 +72,6 @@ namespace NightDrive
         /// <param name="e"></param>
         private void PictureBoxOnMouseUp(object sender, MouseEventArgs e)
         {   
-            // Console.WriteLine($"Leaving picture box,  shouldPaint: {this.ShouldPaint}");
-
             this.ShouldPaint = false;
 
             // Set ending position after our movement
@@ -104,7 +100,37 @@ namespace NightDrive
                 this.PictureBox.Refresh();
                 Logger.Log(LogLevel.Info, $"Drawing line from ({moveStartX}, {moveStartY}) to ({x}, {y})");
             }
-           
+        }
+
+        /// <summary>
+        /// Fired when the image of the picture box is drawn.
+        /// Make visible the drawing while the mouse is still down on it.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PictureBoxOnPaint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            if (ShouldPaint)
+            {
+                // Draw ellipse
+                if (this.SelectedAction == PictureAction.Ellipse)
+                {
+                    g.DrawEllipse(DrawingPen, moveStartX, moveStartY, moveWidth, moveHeight);
+                }
+
+                // Draw rectangle
+                if (this.SelectedAction == PictureAction.Rectangle)
+                {
+                    g.DrawRectangle(this.DrawingPen, moveStartX, moveStartY, moveWidth, moveHeight);
+                }
+
+                if (this.SelectedAction == PictureAction.Line)
+                {
+                    g.DrawLine(this.DrawingPen, moveStartX, moveStartY, x, y);
+                }
+            }
         }
     }
 }

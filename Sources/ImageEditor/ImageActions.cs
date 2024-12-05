@@ -49,8 +49,8 @@ namespace NightDrive
             // Unselect any action
             this.SelectedAction = PictureAction.None;
 
-            // New bitmap object with the size of the PictureBox
-            Bitmap bitmap = new Bitmap(this.PictureBox.Width, this.PictureBox.Height);
+            // New bitmap object with the size of the PictureBox - 100
+            Bitmap bitmap = new Bitmap(this.PictureBox.Width - 100, this.PictureBox.Height - 100);
 
             // Get graphics from the picture
             this.PictureGraphics = Graphics.FromImage(bitmap);

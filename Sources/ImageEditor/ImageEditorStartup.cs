@@ -75,7 +75,7 @@ namespace NightDrive
             this.RichTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
             // New bitmap object with the size of the PictureBox
-            Bitmap bitmap = new Bitmap(this.PictureBox.Width, this.PictureBox.Height);
+            Bitmap bitmap = new Bitmap(this.PictureBox.Width - 100, this.PictureBox.Height - 100);
 
             // Get graphics from the picture
             this.PictureGraphics = Graphics.FromImage(bitmap);

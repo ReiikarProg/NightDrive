@@ -11,7 +11,7 @@ using NightDrive.Helpers.Interface;
 
 namespace NightDrive
 {
-    public partial class MainForm : Form
+    public partial class MainForm 
     {
         #region Default theme settings
         // MainForm
@@ -48,7 +48,10 @@ namespace NightDrive
         // RichTextBox
         public static Color DarkRichTextBoxForeColor = Color.White;
         public static Color DarkRichTextBoxBackColor = MainForm.GetGrayColorVariantFromInt(75);
-        public static Cursor DarkRichTextBoxIBeamCursor = new Cursor(new System.IO.MemoryStream(Properties.Resources.black_select));
+        public static Cursor DarkRichTextBoxIBeamCursor = new Cursor(new MemoryStream(Properties.Resources.black_select));
+
+        // Picture controls back color
+        public static Color PictureBackColor = Color.FromArgb(230, 230, 230);
         #endregion
 
         #region Override methods
@@ -353,10 +356,10 @@ namespace NightDrive
                      */
 
                     this.PicturePanel.ForeColor = MainForm.DefaultMenuStripForeColor;
-                    this.PicturePanel.BackColor = Color.FromArgb(250, 250, 250);
+                    this.PicturePanel.BackColor = MainForm.PictureBackColor;
 
                     this.PictureBox.ForeColor = MainForm.DefaultRichTextBoxForeColor;
-                    this.PictureBox.BackColor = Color.FromArgb(250, 250, 250);
+                    this.PictureBox.BackColor = MainForm.PictureBackColor;
 
                     this.PencilButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
                     this.PencilButton.ForeColor = MainForm.DefaultMenuStripForeColor;

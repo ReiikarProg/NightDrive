@@ -76,7 +76,6 @@ namespace NightDrive
             this.ToolStripPoliceSize = new System.Windows.Forms.ToolStripComboBox();
             this.OpenFileDialogBox = new System.Windows.Forms.OpenFileDialog();
             this.SaveFileDialogBox = new System.Windows.Forms.SaveFileDialog();
-            this.FontDialogBox = new System.Windows.Forms.FontDialog();
             this.FileFormatLabel = new System.Windows.Forms.Label();
             this.FileLenghtLabel = new System.Windows.Forms.Label();
             this.FileEncodingLabel = new System.Windows.Forms.Label();
@@ -547,13 +546,14 @@ namespace NightDrive
             // 
             this.PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.PictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.PictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PictureBox.Location = new System.Drawing.Point(44, 82);
+            this.PictureBox.Location = new System.Drawing.Point(53, 82);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Size = new System.Drawing.Size(573, 428);
             this.PictureBox.TabIndex = 6;
             this.PictureBox.TabStop = false;
+            this.PictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxOnPaint);
             this.PictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOnMouseDown);
             this.PictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOnMouseMove);
             this.PictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOnMouseUp);
@@ -562,7 +562,7 @@ namespace NightDrive
             // 
             this.PicturePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PicturePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.PicturePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.PicturePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PicturePanel.Controls.Add(this.EllipseButton);
             this.PicturePanel.Controls.Add(this.RectangleButton);
@@ -708,6 +708,7 @@ namespace NightDrive
             this.Controls.Add(this.RichTextBox);
             this.Controls.Add(this.MainMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
@@ -760,7 +761,6 @@ namespace NightDrive
         private ToolStripMenuItem DefaultThemeMenuItem;
         private ToolStripMenuItem DarkThemeMenuItem;
         private ToolStripSeparator Separator2;
-        private FontDialog FontDialogBox;
         private ToolStripMenuItem EncodingMenuItem;
         internal Label FileFormatLabel;
         internal Label FileLenghtLabel;
