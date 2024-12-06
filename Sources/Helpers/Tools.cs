@@ -53,12 +53,11 @@ namespace NightDrive.Helpers
         }
 
         /// <summary>
-        /// CreateEmptyFile and enable a con text menu on a given RichTextBox
+        /// Enables a context menu on a given RichTextBox/
         /// </summary>
         /// <param name="richTextBox"></param>
         public static void EnableContextMenu(this RichTextBox richTextBox)
         {
-            // On enable once !
             if (richTextBox.ContextMenuStrip == null)
             {
                 // CreateEmptyFile a ContextMenuStrip without icons

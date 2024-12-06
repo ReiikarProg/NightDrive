@@ -81,6 +81,8 @@ namespace NightDrive
             this.FileEncodingLabel = new System.Windows.Forms.Label();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.PicturePanel = new System.Windows.Forms.Panel();
+            this.ErasingSizeComboBox = new System.Windows.Forms.ComboBox();
+            this.DrawingSizeComboBox = new System.Windows.Forms.ComboBox();
             this.EllipseButton = new System.Windows.Forms.Button();
             this.RectangleButton = new System.Windows.Forms.Button();
             this.LineButton = new System.Windows.Forms.Button();
@@ -564,6 +566,8 @@ namespace NightDrive
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PicturePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.PicturePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PicturePanel.Controls.Add(this.ErasingSizeComboBox);
+            this.PicturePanel.Controls.Add(this.DrawingSizeComboBox);
             this.PicturePanel.Controls.Add(this.EllipseButton);
             this.PicturePanel.Controls.Add(this.RectangleButton);
             this.PicturePanel.Controls.Add(this.LineButton);
@@ -578,12 +582,30 @@ namespace NightDrive
             this.PicturePanel.Size = new System.Drawing.Size(127, 479);
             this.PicturePanel.TabIndex = 7;
             // 
+            // ErasingSizeComboBox
+            // 
+            this.ErasingSizeComboBox.FormattingEnabled = true;
+            this.ErasingSizeComboBox.Location = new System.Drawing.Point(69, 84);
+            this.ErasingSizeComboBox.Name = "ErasingSizeComboBox";
+            this.ErasingSizeComboBox.Size = new System.Drawing.Size(41, 21);
+            this.ErasingSizeComboBox.TabIndex = 10;
+            this.ErasingSizeComboBox.SelectedIndexChanged += new System.EventHandler(this.ErasingSizeComboBoxOnSelectedIndexChanged);
+            // 
+            // DrawingSizeComboBox
+            // 
+            this.DrawingSizeComboBox.FormattingEnabled = true;
+            this.DrawingSizeComboBox.Location = new System.Drawing.Point(69, 38);
+            this.DrawingSizeComboBox.Name = "DrawingSizeComboBox";
+            this.DrawingSizeComboBox.Size = new System.Drawing.Size(41, 21);
+            this.DrawingSizeComboBox.TabIndex = 9;
+            this.DrawingSizeComboBox.SelectedIndexChanged += new System.EventHandler(this.DrawingSizeComboBoxOnSelectedIndexChanged);
+            // 
             // EllipseButton
             // 
             this.EllipseButton.BackColor = System.Drawing.Color.White;
             this.EllipseButton.BackgroundImage = global::NightDrive.Properties.Resources.Circle;
             this.EllipseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.EllipseButton.Location = new System.Drawing.Point(12, 125);
+            this.EllipseButton.Location = new System.Drawing.Point(12, 202);
             this.EllipseButton.Name = "EllipseButton";
             this.EllipseButton.Size = new System.Drawing.Size(45, 45);
             this.EllipseButton.TabIndex = 8;
@@ -595,7 +617,7 @@ namespace NightDrive
             this.RectangleButton.BackColor = System.Drawing.Color.White;
             this.RectangleButton.BackgroundImage = global::NightDrive.Properties.Resources.Rectangle;
             this.RectangleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.RectangleButton.Location = new System.Drawing.Point(69, 74);
+            this.RectangleButton.Location = new System.Drawing.Point(69, 151);
             this.RectangleButton.Name = "RectangleButton";
             this.RectangleButton.Size = new System.Drawing.Size(45, 45);
             this.RectangleButton.TabIndex = 7;
@@ -607,7 +629,7 @@ namespace NightDrive
             this.LineButton.BackColor = System.Drawing.Color.White;
             this.LineButton.BackgroundImage = global::NightDrive.Properties.Resources.Line;
             this.LineButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.LineButton.Location = new System.Drawing.Point(12, 74);
+            this.LineButton.Location = new System.Drawing.Point(12, 151);
             this.LineButton.Name = "LineButton";
             this.LineButton.Size = new System.Drawing.Size(45, 45);
             this.LineButton.TabIndex = 6;
@@ -661,7 +683,7 @@ namespace NightDrive
             this.EraserButton.BackColor = System.Drawing.Color.White;
             this.EraserButton.BackgroundImage = global::NightDrive.Properties.Resources.Eraser;
             this.EraserButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.EraserButton.Location = new System.Drawing.Point(69, 23);
+            this.EraserButton.Location = new System.Drawing.Point(12, 71);
             this.EraserButton.Name = "EraserButton";
             this.EraserButton.Size = new System.Drawing.Size(45, 45);
             this.EraserButton.TabIndex = 2;
@@ -673,7 +695,7 @@ namespace NightDrive
             this.ClearButton.BackColor = System.Drawing.Color.White;
             this.ClearButton.BackgroundImage = global::NightDrive.Properties.Resources.Clear;
             this.ClearButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClearButton.Location = new System.Drawing.Point(69, 125);
+            this.ClearButton.Location = new System.Drawing.Point(69, 202);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(45, 45);
             this.ClearButton.TabIndex = 1;
@@ -790,6 +812,8 @@ namespace NightDrive
         private Button EllipseButton;
         private Button RectangleButton;
         private Button LineButton;
+        private ComboBox ErasingSizeComboBox;
+        private ComboBox DrawingSizeComboBox;
     }
 }
 

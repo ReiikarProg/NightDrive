@@ -40,6 +40,11 @@ namespace NightDrive
         internal int x, y, moveWidth, moveHeight, moveStartX, moveStartY;
 
         /// <summary>
+        /// Current drawing pen color (Black is the default one).
+        /// </summary>
+        internal Color DrawingColor = Color.Black;
+
+        /// <summary>
         /// Pen used to draw.
         /// </summary>
         internal Pen DrawingPen = new Pen(Color.Black, 1);
@@ -72,10 +77,15 @@ namespace NightDrive
             // PictureBox default location & size
             this.PictureBox.Size = new Size(760 - this.PicturePanel.Width, 479);  
             this.PictureBox.Location = new Point(12, 57);
+
+            // Why is this needed ?
             this.RichTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left;
 
             // New bitmap object with the size of the PictureBox
             Bitmap bitmap = new Bitmap(this.PictureBox.Width - 100, this.PictureBox.Height - 100);
+
+            // Get default Pen(s) (with color equals "Black")
+            this.DrawingPen = new Pen(this.DrawingColor, 1);
 
             // Get graphics from the picture
             this.PictureGraphics = Graphics.FromImage(bitmap);
@@ -88,6 +98,31 @@ namespace NightDrive
             this.OriginalImageSize = new Size(bitmap.Width, bitmap.Height);
 
             this.PictureBox.Refresh();
+
+            // Define default values for combo boxes,
+            
+            // Drawing brush (default is 1)
+            this.DrawingSizeComboBox.Items.AddRange(new object[]
+            {
+                "1",
+                "2",
+                "3"
+            });
+
+            // Erasing brush (default is 15)
+            this.ErasingSizeComboBox.Items.AddRange(new object[]
+            {
+                "10",
+                "15",
+                "20",
+                "25",
+                "30"
+            });
+
+            // Preset default values
+            this.DrawingSizeComboBox.Text = "1";
+            this.ErasingSizeComboBox.Text = "15";
+
 
             Logger.Log(LogLevel.Info, "Image editor init done");
         }

@@ -132,5 +132,27 @@ namespace NightDrive
                 }
             }
         }
+
+        /// <summary>
+        /// Fired whenever the drawing pen width combo box value is changed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DrawingSizeComboBoxOnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Logger.Log(LogLevel.Info, $"Updating drawing pen width ({this.DrawingPen.Width} => {this.DrawingSizeComboBox.Text})");
+            this.DrawingPen = new Pen(this.DrawingColor, float.Parse(this.DrawingSizeComboBox.Text));
+        }
+
+        /// <summary>
+        ///  Fired whenever the eraser pen width combo box value is changed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ErasingSizeComboBoxOnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            Logger.Log(LogLevel.Info, $"Updating eraser pen width ({this.EraserPen.Width} => {this.ErasingSizeComboBox.Text})");
+            this.EraserPen = new Pen(Color.White, float.Parse(this.ErasingSizeComboBox.Text));
+        }
     }
 }
