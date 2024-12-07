@@ -31,3 +31,6 @@ TestResults.xml
 /obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 /.gitignore
 /obj/Debug/NightDrive.csproj.AssemblyReference.cache
+/obj/Debug/NightDrive.csproj.FileListAbsolute.txt
+/obj/Debug/NightDrive.Properties.Resources.resources
+/obj/Debug/NightDrive.MainForm.resources

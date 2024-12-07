@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NightDrive.Enums;
 using NightDrive.Helpers;
@@ -37,12 +32,27 @@ namespace NightDrive
         internal Point PictureX;
         internal Point PictureY;
 
+        // Used for mouse movement tracking
         internal int x, y, moveWidth, moveHeight, moveStartX, moveStartY;
+
+        /// <summary>
+        /// Color dialog object.
+        /// </summary>
+        ColorDialog ColorDialog = new ColorDialog();
 
         /// <summary>
         /// Current drawing pen color (Black is the default one).
         /// </summary>
-        internal Color DrawingColor = Color.Black;
+        private Color _drawingColor = Color.Black;
+        internal Color DrawingColor
+        {
+            get => this._drawingColor;
+            set
+            {
+                Logger.Log(LogLevel.Info, $"Drawing color changed: {_drawingColor} => {value}");
+                this._drawingColor = value;
+            }
+        }
 
         /// <summary>
         /// Pen used to draw.
@@ -87,6 +97,9 @@ namespace NightDrive
             // Get default Pen(s) (with color equals "Black")
             this.DrawingPen = new Pen(this.DrawingColor, 1);
 
+            // Set default color to the preview button
+            this.PreviewColorButton.BackColor = this.DrawingColor;
+
             // Get graphics from the picture
             this.PictureGraphics = Graphics.FromImage(bitmap);
             this.PictureGraphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
@@ -104,9 +117,11 @@ namespace NightDrive
             // Drawing brush (default is 1)
             this.DrawingSizeComboBox.Items.AddRange(new object[]
             {
+                "0,5",
                 "1",
                 "2",
-                "3"
+                "3",
+                "5"
             });
 
             // Erasing brush (default is 15)

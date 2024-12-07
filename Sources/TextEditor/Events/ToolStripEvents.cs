@@ -118,5 +118,30 @@ namespace NightDrive
             }
             this.RichTextBox.Focus();
         }
+
+        /// <summary>
+        /// The user wants to change text color
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripColorOnClick(object sender, EventArgs e)
+        {
+            Logger.Log(LogLevel.Info, "Changing text color");
+            
+            using (ColorDialog cd = new ColorDialog())
+            {
+                cd.ShowDialog();
+                
+                // If something is selected, change the color of this and only this
+                if (!string.IsNullOrWhiteSpace(this.RichTextBox.SelectedText))
+                {
+                    this.RichTextBox.SelectionColor = cd.Color;
+                }
+                else // Set the whole color
+                {
+                    this.RichTextBox.ForeColor = cd.Color;
+                }
+            }
+        }
     }
 }

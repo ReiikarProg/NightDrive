@@ -74,6 +74,7 @@ namespace NightDrive
             this.Separator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripPoliceFamily = new System.Windows.Forms.ToolStripComboBox();
             this.ToolStripPoliceSize = new System.Windows.Forms.ToolStripComboBox();
+            this.ToolStripColor = new System.Windows.Forms.ToolStripButton();
             this.OpenFileDialogBox = new System.Windows.Forms.OpenFileDialog();
             this.SaveFileDialogBox = new System.Windows.Forms.SaveFileDialog();
             this.FileFormatLabel = new System.Windows.Forms.Label();
@@ -81,6 +82,11 @@ namespace NightDrive
             this.FileEncodingLabel = new System.Windows.Forms.Label();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.PicturePanel = new System.Windows.Forms.Panel();
+            this.PenSize = new System.Windows.Forms.Label();
+            this.EraserSize = new System.Windows.Forms.Label();
+            this.PreviewColorButton = new System.Windows.Forms.Button();
+            this.FillButton = new System.Windows.Forms.Button();
+            this.ColorChoiceButton = new System.Windows.Forms.Button();
             this.ErasingSizeComboBox = new System.Windows.Forms.ComboBox();
             this.DrawingSizeComboBox = new System.Windows.Forms.ComboBox();
             this.EllipseButton = new System.Windows.Forms.Button();
@@ -92,6 +98,7 @@ namespace NightDrive
             this.EraserButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.PencilButton = new System.Windows.Forms.Button();
+            this.PanelName = new System.Windows.Forms.LinkLabel();
             this.MainMenuStrip.SuspendLayout();
             this.MainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
@@ -308,7 +315,8 @@ namespace NightDrive
             this.ToolStripRightAlign,
             this.Separator4,
             this.ToolStripPoliceFamily,
-            this.ToolStripPoliceSize});
+            this.ToolStripPoliceSize,
+            this.ToolStripColor});
             this.MainToolStrip.Location = new System.Drawing.Point(0, 24);
             this.MainToolStrip.Name = "MainToolStrip";
             this.MainToolStrip.Padding = new System.Windows.Forms.Padding(0);
@@ -375,7 +383,7 @@ namespace NightDrive
             this.ToolStripPrevious.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolStripPrevious.Name = "ToolStripPrevious";
             this.ToolStripPrevious.Size = new System.Drawing.Size(23, 22);
-            this.ToolStripPrevious.Text = "toolStripButton2";
+            this.ToolStripPrevious.Text = "Précédent";
             this.ToolStripPrevious.Click += new System.EventHandler(this.ToolStripPreviousOnClick);
             // 
             // ToolStripNext
@@ -385,7 +393,7 @@ namespace NightDrive
             this.ToolStripNext.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolStripNext.Name = "ToolStripNext";
             this.ToolStripNext.Size = new System.Drawing.Size(23, 22);
-            this.ToolStripNext.Text = "ToolStripNext";
+            this.ToolStripNext.Text = "Suivant";
             this.ToolStripNext.Click += new System.EventHandler(this.ToolStripNextOnClick);
             // 
             // ToolStripErase
@@ -514,6 +522,17 @@ namespace NightDrive
             this.ToolStripPoliceSize.ToolTipText = "Taille de police";
             this.ToolStripPoliceSize.SelectedIndexChanged += new System.EventHandler(this.ToolStripPoliceSizeOnSelectedIndexChanged);
             // 
+            // ToolStripColor
+            // 
+            this.ToolStripColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ToolStripColor.Image = global::NightDrive.Properties.Resources.Color;
+            this.ToolStripColor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripColor.Margin = new System.Windows.Forms.Padding(1, 1, 0, 2);
+            this.ToolStripColor.Name = "ToolStripColor";
+            this.ToolStripColor.Size = new System.Drawing.Size(23, 22);
+            this.ToolStripColor.Text = "Couleur";
+            this.ToolStripColor.Click += new System.EventHandler(this.ToolStripColorOnClick);
+            // 
             // FileFormatLabel
             // 
             this.FileFormatLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -566,6 +585,12 @@ namespace NightDrive
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PicturePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.PicturePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PicturePanel.Controls.Add(this.PanelName);
+            this.PicturePanel.Controls.Add(this.PenSize);
+            this.PicturePanel.Controls.Add(this.EraserSize);
+            this.PicturePanel.Controls.Add(this.PreviewColorButton);
+            this.PicturePanel.Controls.Add(this.FillButton);
+            this.PicturePanel.Controls.Add(this.ColorChoiceButton);
             this.PicturePanel.Controls.Add(this.ErasingSizeComboBox);
             this.PicturePanel.Controls.Add(this.DrawingSizeComboBox);
             this.PicturePanel.Controls.Add(this.EllipseButton);
@@ -582,10 +607,63 @@ namespace NightDrive
             this.PicturePanel.Size = new System.Drawing.Size(127, 479);
             this.PicturePanel.TabIndex = 7;
             // 
+            // PenSize
+            // 
+            this.PenSize.AutoSize = true;
+            this.PenSize.Location = new System.Drawing.Point(73, 60);
+            this.PenSize.Name = "PenSize";
+            this.PenSize.Size = new System.Drawing.Size(32, 13);
+            this.PenSize.TabIndex = 15;
+            this.PenSize.Text = "Taille";
+            // 
+            // EraserSize
+            // 
+            this.EraserSize.AutoSize = true;
+            this.EraserSize.Location = new System.Drawing.Point(73, 108);
+            this.EraserSize.Name = "EraserSize";
+            this.EraserSize.Size = new System.Drawing.Size(32, 13);
+            this.EraserSize.TabIndex = 14;
+            this.EraserSize.Text = "Taille";
+            // 
+            // PreviewColorButton
+            // 
+            this.PreviewColorButton.BackColor = System.Drawing.Color.White;
+            this.PreviewColorButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PreviewColorButton.Location = new System.Drawing.Point(69, 155);
+            this.PreviewColorButton.Name = "PreviewColorButton";
+            this.PreviewColorButton.Size = new System.Drawing.Size(45, 45);
+            this.PreviewColorButton.TabIndex = 13;
+            this.PreviewColorButton.TabStop = false;
+            this.PreviewColorButton.UseVisualStyleBackColor = false;
+            // 
+            // FillButton
+            // 
+            this.FillButton.BackColor = System.Drawing.Color.White;
+            this.FillButton.BackgroundImage = global::NightDrive.Properties.Resources.Fill;
+            this.FillButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FillButton.Location = new System.Drawing.Point(12, 206);
+            this.FillButton.Name = "FillButton";
+            this.FillButton.Size = new System.Drawing.Size(45, 45);
+            this.FillButton.TabIndex = 12;
+            this.FillButton.UseVisualStyleBackColor = false;
+            this.FillButton.Click += new System.EventHandler(this.FillButtonOnClick);
+            // 
+            // ColorChoiceButton
+            // 
+            this.ColorChoiceButton.BackColor = System.Drawing.Color.White;
+            this.ColorChoiceButton.BackgroundImage = global::NightDrive.Properties.Resources.Color;
+            this.ColorChoiceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ColorChoiceButton.Location = new System.Drawing.Point(12, 155);
+            this.ColorChoiceButton.Name = "ColorChoiceButton";
+            this.ColorChoiceButton.Size = new System.Drawing.Size(45, 45);
+            this.ColorChoiceButton.TabIndex = 11;
+            this.ColorChoiceButton.UseVisualStyleBackColor = false;
+            this.ColorChoiceButton.Click += new System.EventHandler(this.ColorChoiceButtonOnClick);
+            // 
             // ErasingSizeComboBox
             // 
             this.ErasingSizeComboBox.FormattingEnabled = true;
-            this.ErasingSizeComboBox.Location = new System.Drawing.Point(69, 84);
+            this.ErasingSizeComboBox.Location = new System.Drawing.Point(69, 124);
             this.ErasingSizeComboBox.Name = "ErasingSizeComboBox";
             this.ErasingSizeComboBox.Size = new System.Drawing.Size(41, 21);
             this.ErasingSizeComboBox.TabIndex = 10;
@@ -594,7 +672,7 @@ namespace NightDrive
             // DrawingSizeComboBox
             // 
             this.DrawingSizeComboBox.FormattingEnabled = true;
-            this.DrawingSizeComboBox.Location = new System.Drawing.Point(69, 38);
+            this.DrawingSizeComboBox.Location = new System.Drawing.Point(69, 76);
             this.DrawingSizeComboBox.Name = "DrawingSizeComboBox";
             this.DrawingSizeComboBox.Size = new System.Drawing.Size(41, 21);
             this.DrawingSizeComboBox.TabIndex = 9;
@@ -605,7 +683,7 @@ namespace NightDrive
             this.EllipseButton.BackColor = System.Drawing.Color.White;
             this.EllipseButton.BackgroundImage = global::NightDrive.Properties.Resources.Circle;
             this.EllipseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.EllipseButton.Location = new System.Drawing.Point(12, 202);
+            this.EllipseButton.Location = new System.Drawing.Point(12, 257);
             this.EllipseButton.Name = "EllipseButton";
             this.EllipseButton.Size = new System.Drawing.Size(45, 45);
             this.EllipseButton.TabIndex = 8;
@@ -617,7 +695,7 @@ namespace NightDrive
             this.RectangleButton.BackColor = System.Drawing.Color.White;
             this.RectangleButton.BackgroundImage = global::NightDrive.Properties.Resources.Rectangle;
             this.RectangleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.RectangleButton.Location = new System.Drawing.Point(69, 151);
+            this.RectangleButton.Location = new System.Drawing.Point(69, 257);
             this.RectangleButton.Name = "RectangleButton";
             this.RectangleButton.Size = new System.Drawing.Size(45, 45);
             this.RectangleButton.TabIndex = 7;
@@ -627,9 +705,9 @@ namespace NightDrive
             // LineButton
             // 
             this.LineButton.BackColor = System.Drawing.Color.White;
-            this.LineButton.BackgroundImage = global::NightDrive.Properties.Resources.Line;
+            this.LineButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LineButton.BackgroundImage")));
             this.LineButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.LineButton.Location = new System.Drawing.Point(12, 151);
+            this.LineButton.Location = new System.Drawing.Point(70, 206);
             this.LineButton.Name = "LineButton";
             this.LineButton.Size = new System.Drawing.Size(45, 45);
             this.LineButton.TabIndex = 6;
@@ -650,7 +728,7 @@ namespace NightDrive
             // ZoomLabel
             // 
             this.ZoomLabel.AutoSize = true;
-            this.ZoomLabel.Location = new System.Drawing.Point(33, 421);
+            this.ZoomLabel.Location = new System.Drawing.Point(33, 418);
             this.ZoomLabel.Name = "ZoomLabel";
             this.ZoomLabel.Size = new System.Drawing.Size(51, 13);
             this.ZoomLabel.TabIndex = 4;
@@ -683,7 +761,7 @@ namespace NightDrive
             this.EraserButton.BackColor = System.Drawing.Color.White;
             this.EraserButton.BackgroundImage = global::NightDrive.Properties.Resources.Eraser;
             this.EraserButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.EraserButton.Location = new System.Drawing.Point(12, 71);
+            this.EraserButton.Location = new System.Drawing.Point(12, 104);
             this.EraserButton.Name = "EraserButton";
             this.EraserButton.Size = new System.Drawing.Size(45, 45);
             this.EraserButton.TabIndex = 2;
@@ -693,12 +771,12 @@ namespace NightDrive
             // ClearButton
             // 
             this.ClearButton.BackColor = System.Drawing.Color.White;
-            this.ClearButton.BackgroundImage = global::NightDrive.Properties.Resources.Clear;
             this.ClearButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClearButton.Location = new System.Drawing.Point(69, 202);
+            this.ClearButton.Location = new System.Drawing.Point(12, 381);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(45, 45);
+            this.ClearButton.Size = new System.Drawing.Size(98, 28);
             this.ClearButton.TabIndex = 1;
+            this.ClearButton.Text = "Effacer";
             this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButtonOnClick);
             // 
@@ -707,13 +785,28 @@ namespace NightDrive
             this.PencilButton.BackColor = System.Drawing.Color.White;
             this.PencilButton.BackgroundImage = global::NightDrive.Properties.Resources.Pencil;
             this.PencilButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PencilButton.Location = new System.Drawing.Point(12, 23);
+            this.PencilButton.Location = new System.Drawing.Point(12, 56);
             this.PencilButton.Margin = new System.Windows.Forms.Padding(0);
             this.PencilButton.Name = "PencilButton";
             this.PencilButton.Size = new System.Drawing.Size(45, 45);
             this.PencilButton.TabIndex = 0;
             this.PencilButton.UseVisualStyleBackColor = false;
             this.PencilButton.Click += new System.EventHandler(this.PencilButtonOnClick);
+            // 
+            // PanelName
+            // 
+            this.PanelName.AutoSize = true;
+            this.PanelName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PanelName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.PanelName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelName.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
+            this.PanelName.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.PanelName.LinkColor = System.Drawing.Color.Black;
+            this.PanelName.Location = new System.Drawing.Point(12, 23);
+            this.PanelName.Name = "PanelName";
+            this.PanelName.Size = new System.Drawing.Size(104, 19);
+            this.PanelName.TabIndex = 16;
+            this.PanelName.Text = "Boîte à outils";
             // 
             // MainForm
             // 
@@ -814,6 +907,13 @@ namespace NightDrive
         private Button LineButton;
         private ComboBox ErasingSizeComboBox;
         private ComboBox DrawingSizeComboBox;
+        private Button ColorChoiceButton;
+        private Button FillButton;
+        private Button PreviewColorButton;
+        private ToolStripButton ToolStripColor;
+        private Label PenSize;
+        private Label EraserSize;
+        private LinkLabel PanelName;
     }
 }
 

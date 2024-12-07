@@ -96,6 +96,20 @@ namespace NightDrive
             if (format is FileFormat.Text /* Text or RichText are considered the same */)
             {
                 this.RichTextBox.Visible = true;
+                this.ToolStripPoliceFamily.Visible = true;
+                this.ToolStripPoliceSize.Visible = true;
+                this.ToolStripBold.Visible = true;
+                this.ToolStripItalic.Visible = true;
+                this.ToolStripUnderline.Visible = true;
+                this.ToolStripLeftAlign.Visible = true;
+                this.ToolStripRightAlign.Visible = true;
+                this.ToolStripCenterAlign.Visible = true;
+                this.Separator2.Visible = true;
+                this.Separator3.Visible = true;
+                this.Separator4.Visible = true;
+                this.ToolStripNext.Visible = true;
+                this.ToolStripPrevious.Visible = true;
+                this.ToolStripColor.Visible = true;
 
                 this.PictureBox.Visible = false;
                 this.PicturePanel.Visible = false;
@@ -103,6 +117,20 @@ namespace NightDrive
             else if (format == FileFormat.Image)
             {
                 this.RichTextBox.Visible = false;
+                this.ToolStripPoliceFamily.Visible = false;
+                this.ToolStripPoliceSize.Visible = false;
+                this.ToolStripBold.Visible = false;
+                this.ToolStripItalic.Visible = false;
+                this.ToolStripUnderline.Visible = false;
+                this.ToolStripLeftAlign.Visible = false;
+                this.ToolStripRightAlign.Visible = false;
+                this.ToolStripCenterAlign.Visible = false;
+                this.Separator2.Visible = false;
+                this.Separator3.Visible = false;
+                this.Separator4.Visible = false;
+                this.ToolStripNext.Visible = false;
+                this.ToolStripPrevious.Visible = false;
+                this.ToolStripColor.Visible = false;
 
                 this.PictureBox.Visible = true; 
                 this.PicturePanel.Visible = true;
@@ -189,14 +217,15 @@ namespace NightDrive
         private void ApplySettingsFromJson()
         {
             // Apply the theme from the config
-            this.ApplyTheme(this.AppSettings.ThemeColor);
+            this.ApplyTheme(this.AppSettings.ThemeColor, true);
         }
 
         /// <summary>
         /// Apply the given theme to the application by updating components.
         /// </summary>
         /// <param name="theme"></param>
-        private void ApplyTheme(Theme theme)
+        /// <param name="forceFontColor"></param>
+        private void ApplyTheme(Theme theme, bool forceFontColor = false)
         {
             Logger.Log(LogLevel.Info, $"Applying theme \"{theme.ToString()}\" to the application");
 
@@ -239,6 +268,7 @@ namespace NightDrive
                     this.ToolStripLeftAlign.Image = Properties.Resources.AlignLeftDark;
                     this.ToolStripCenterAlign.Image = Properties.Resources.AlignCenterDark;
                     this.ToolStripRightAlign.Image = Properties.Resources.AlignRightDark;
+                    this.ToolStripColor.Image = Properties.Resources.ColorDark;
 
                     this.ToolStripPoliceFamily.ForeColor = MainForm.DarkMenuStripForeColor;
                     this.ToolStripPoliceFamily.BackColor = MainForm.GetGrayColorVariantFromInt(100);
@@ -246,7 +276,13 @@ namespace NightDrive
                     this.ToolStripPoliceSize.ForeColor = MainForm.DarkMenuStripForeColor;
                     this.ToolStripPoliceSize.BackColor = MainForm.GetGrayColorVariantFromInt(100);
 
-                    this.RichTextBox.ForeColor = MainForm.DarkRichTextBoxForeColor;
+                    this.ToolStripColor.ForeColor = MainForm.DarkMenuStripForeColor;
+
+                    if (forceFontColor)
+                    {
+                        this.RichTextBox.ForeColor = MainForm.DarkRichTextBoxForeColor;
+                    }
+
                     this.RichTextBox.BackColor = MainForm.DarkRichTextBoxBackColor;
                     this.RichTextBox.Cursor = MainForm.DarkRichTextBoxIBeamCursor;
 
@@ -282,6 +318,12 @@ namespace NightDrive
                     this.LineButton.BackColor = MainForm.DarkRichTextBoxBackColor;
                     this.LineButton.ForeColor = MainForm.DarkMenuStripForeColor;
 
+                    this.ColorChoiceButton.BackColor = MainForm.DarkRichTextBoxBackColor;
+                    this.ColorChoiceButton.ForeColor = MainForm.DarkMenuStripForeColor;
+
+                    this.FillButton.BackColor = MainForm.DarkRichTextBoxBackColor;
+                    this.FillButton.ForeColor = MainForm.DarkMenuStripForeColor;
+
                     this.ZoomLabel.BackColor = MainForm.DarkRichTextBoxBackColor;
                     this.ZoomLabel.ForeColor = MainForm.DarkMenuStripForeColor;
 
@@ -294,7 +336,8 @@ namespace NightDrive
                     this.LineButton.BackgroundImage = Properties.Resources.LineDark;
                     this.RectangleButton.BackgroundImage = Properties.Resources.RectangleDark;
                     this.EllipseButton.BackgroundImage = Properties.Resources.CircleDark;
-                    this.ClearButton.BackgroundImage = Properties.Resources.ClearDark;
+                    this.ColorChoiceButton.BackgroundImage = Properties.Resources.ColorDark;
+                    this.FillButton.BackgroundImage = Properties.Resources.FillDark;
 
                     break;
 
@@ -336,6 +379,7 @@ namespace NightDrive
                     this.ToolStripLeftAlign.Image = Properties.Resources.AlignLeft;
                     this.ToolStripCenterAlign.Image = Properties.Resources.AlignCenter;
                     this.ToolStripRightAlign.Image = Properties.Resources.AlignRight;
+                    this.ToolStripColor.Image = Properties.Resources.Color;
 
                     this.ToolStripPoliceFamily.ForeColor = MainForm.DefaultMenuStripForeColor;
                     this.ToolStripPoliceFamily.BackColor = MainForm.GetGrayColorVariantFromInt(245);
@@ -343,7 +387,13 @@ namespace NightDrive
                     this.ToolStripPoliceSize.ForeColor = MainForm.DefaultMenuStripForeColor;
                     this.ToolStripPoliceSize.BackColor = MainForm.GetGrayColorVariantFromInt(245);
 
-                    this.RichTextBox.ForeColor = MainForm.DefaultRichTextBoxForeColor;
+                    this.ToolStripColor.ForeColor = MainForm.DefaultMenuStripForeColor;
+
+                    if (forceFontColor)
+                    {
+                        this.RichTextBox.ForeColor = MainForm.DefaultRichTextBoxForeColor;
+                    }
+
                     this.RichTextBox.BackColor = MainForm.DefaultRichTextBoxBackColor;
                     this.RichTextBox.Cursor = MainForm.DefaultRichTextBoxIBeamCursor;
 
@@ -379,7 +429,13 @@ namespace NightDrive
                     this.LineButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
                     this.LineButton.ForeColor = MainForm.DefaultMenuStripForeColor;
 
-                    this.ZoomLabel.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.ColorChoiceButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.ColorChoiceButton.ForeColor = MainForm.DefaultMenuStripForeColor;
+
+                    this.FillButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
+                    this.FillButton.ForeColor = MainForm.DefaultMenuStripForeColor;
+
+                    this.ZoomLabel.BackColor = MainForm.PictureBackColor;
                     this.ZoomLabel.ForeColor = MainForm.DefaultMenuStripForeColor;
 
                     this.ZoomButton.BackColor = MainForm.DefaultRichTextBoxBackColor;
@@ -391,7 +447,8 @@ namespace NightDrive
                     this.LineButton.BackgroundImage = Properties.Resources.Line;
                     this.RectangleButton.BackgroundImage = Properties.Resources.Rectangle;
                     this.EllipseButton.BackgroundImage = Properties.Resources.Circle;
-                    this.ClearButton.BackgroundImage = Properties.Resources.Clear;
+                    this.ColorChoiceButton.BackgroundImage = Properties.Resources.Color;
+                    this.FillButton.BackgroundImage = Properties.Resources.Fill;
 
                     break;
             }

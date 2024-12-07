@@ -30,6 +30,11 @@
         /// <summary>
         /// Rectangle drawing is selected.
         /// </summary>
-        Rectangle = 5
+        Rectangle = 5,
+
+        /// <summary>
+        /// Fill drawing is selected.
+        /// </summary>
+        Fill = 6
     }
 }
