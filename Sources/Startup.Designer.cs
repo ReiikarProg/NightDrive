@@ -82,6 +82,7 @@ namespace NightDrive
             this.FileEncodingLabel = new System.Windows.Forms.Label();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.PicturePanel = new System.Windows.Forms.Panel();
+            this.PanelName = new System.Windows.Forms.LinkLabel();
             this.PenSize = new System.Windows.Forms.Label();
             this.EraserSize = new System.Windows.Forms.Label();
             this.PreviewColorButton = new System.Windows.Forms.Button();
@@ -98,7 +99,6 @@ namespace NightDrive
             this.EraserButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.PencilButton = new System.Windows.Forms.Button();
-            this.PanelName = new System.Windows.Forms.LinkLabel();
             this.MainMenuStrip.SuspendLayout();
             this.MainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
@@ -575,6 +575,7 @@ namespace NightDrive
             this.PictureBox.TabIndex = 6;
             this.PictureBox.TabStop = false;
             this.PictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxOnPaint);
+            this.PictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOnMouseClick);
             this.PictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOnMouseDown);
             this.PictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOnMouseMove);
             this.PictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PictureBoxOnMouseUp);
@@ -606,6 +607,21 @@ namespace NightDrive
             this.PicturePanel.Name = "PicturePanel";
             this.PicturePanel.Size = new System.Drawing.Size(127, 479);
             this.PicturePanel.TabIndex = 7;
+            // 
+            // PanelName
+            // 
+            this.PanelName.AutoSize = true;
+            this.PanelName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PanelName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.PanelName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelName.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
+            this.PanelName.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.PanelName.LinkColor = System.Drawing.Color.Black;
+            this.PanelName.Location = new System.Drawing.Point(12, 23);
+            this.PanelName.Name = "PanelName";
+            this.PanelName.Size = new System.Drawing.Size(104, 19);
+            this.PanelName.TabIndex = 16;
+            this.PanelName.Text = "Boîte à outils";
             // 
             // PenSize
             // 
@@ -792,21 +808,6 @@ namespace NightDrive
             this.PencilButton.TabIndex = 0;
             this.PencilButton.UseVisualStyleBackColor = false;
             this.PencilButton.Click += new System.EventHandler(this.PencilButtonOnClick);
-            // 
-            // PanelName
-            // 
-            this.PanelName.AutoSize = true;
-            this.PanelName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PanelName.Cursor = System.Windows.Forms.Cursors.Default;
-            this.PanelName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PanelName.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.PanelName.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.PanelName.LinkColor = System.Drawing.Color.Black;
-            this.PanelName.Location = new System.Drawing.Point(12, 23);
-            this.PanelName.Name = "PanelName";
-            this.PanelName.Size = new System.Drawing.Size(104, 19);
-            this.PanelName.TabIndex = 16;
-            this.PanelName.Text = "Boîte à outils";
             // 
             // MainForm
             // 

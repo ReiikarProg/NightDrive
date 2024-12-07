@@ -103,6 +103,21 @@ namespace NightDrive
         }
 
         /// <summary>
+        /// Called on click on the picture box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PictureBoxOnMouseClick(object sender, MouseEventArgs e)
+        {
+            // Proceed to fill if selected
+            if (this.SelectedAction == PictureAction.Fill)
+            {
+                Point point = e.Location;
+                this.Fill(point.X, point.Y);
+            }
+        }
+
+        /// <summary>
         /// Fired when the image of the picture box is drawn.
         /// Make visible the drawing while the mouse is still down on it.
         /// </summary>

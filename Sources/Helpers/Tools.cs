@@ -6,11 +6,33 @@ using System.Windows.Forms;
 using NightDrive.Enums;
 using System.Drawing.Drawing2D;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace NightDrive.Helpers
 {
     public static class Tools
     {
+        /// <summary>
+        /// Intermediate method used in the Fill action.
+        /// </summary>
+        /// <param name="bitmap"></param>
+        /// <param name="stackPoint"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="oldColor"></param>
+        /// <param name="newColor"></param>
+        public static void Validate(Bitmap bitmap, Stack<Point> stackPoint, int x, int y, Color oldColor, Color newColor)
+        {
+            Color color = bitmap.GetPixel(x, y);
+
+            // Only proceed same color
+            if (color == oldColor)
+            {
+                stackPoint.Push(new Point(x, y));
+                bitmap.SetPixel(x, y, newColor);
+            }
+        }
+
         /// <summary>
         /// Enables a context menu on a given RichTextBox/
         /// </summary>
