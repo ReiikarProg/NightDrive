@@ -58,6 +58,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Sources\DataGridEditor\ContextMenuActions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sources\DataGridEditor\DataGridEditorStartup.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Sources\ImageEditor\ImageActions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,15 +77,15 @@
     <Compile Include="Sources\_Enums\CustomBoxIcon.cs" />
     <Compile Include="Sources\_Enums\FileFormat.cs" />
     <Compile Include="Sources\_Enums\LogLevel.cs" />
-    <Compile Include="Sources\Helpers\Interface\DarkColorTable.cs" />
-    <Compile Include="Sources\Helpers\Interface\FontEx.cs" />
-    <Compile Include="Sources\Helpers\Interface\LightColorTable.cs" />
-    <Compile Include="Sources\Helpers\Tools.cs" />
-    <Compile Include="Sources\Helpers\Paths.cs" />
-    <Compile Include="Sources\Helpers\CustomDialogBox.cs">
+    <Compile Include="Sources\_Helpers\Interface\DarkColorTable.cs" />
+    <Compile Include="Sources\_Helpers\Interface\FontEx.cs" />
+    <Compile Include="Sources\_Helpers\Interface\LightColorTable.cs" />
+    <Compile Include="Sources\_Helpers\Tools.cs" />
+    <Compile Include="Sources\_Helpers\Paths.cs" />
+    <Compile Include="Sources\_Helpers\CustomDialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sources\Helpers\Logger.cs" />
+    <Compile Include="Sources\_Helpers\Logger.cs" />
     <Compile Include="Sources\ImageEditor\Events\ButtonEvents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,7 @@
     <Compile Include="Sources\TextEditor\Events\ToolStripEvents.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Sources\_Models\GridEditorModel.cs" />
     <Compile Include="Sources\_Models\SettingsModel.cs" />
     <Compile Include="Sources\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,7 +127,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sources\Helpers\CustomDialogBox.resx">
+    <EmbeddedResource Include="Sources\_Helpers\CustomDialogBox.resx">
       <DependentUpon>CustomDialogBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\Startup.resx">
@@ -128,7 +135,7 @@
     </EmbeddedResource>
     <None Include="config\lastFileConfig.json" />
     <None Include="config\settings.json" />
-    <None Include="packages.config" />
+    <None Include="Properties\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\App.config" />

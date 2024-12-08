@@ -30,6 +30,7 @@ namespace NightDrive
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.FileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,11 +100,22 @@ namespace NightDrive
             this.EraserButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.PencilButton = new System.Windows.Forms.Button();
+            this.DataGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Add = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddColumn = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddRow = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuStrip.SuspendLayout();
             this.MainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.PicturePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ZoomUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
+            this.DataGridContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenuStrip
@@ -809,12 +821,78 @@ namespace NightDrive
             this.PencilButton.UseVisualStyleBackColor = false;
             this.PencilButton.Click += new System.EventHandler(this.PencilButtonOnClick);
             // 
+            // DataGridView
+            // 
+            this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.DataGridView.ContextMenuStrip = this.DataGridContextMenu;
+            this.DataGridView.Location = new System.Drawing.Point(69, 109);
+            this.DataGridView.Name = "DataGridView";
+            this.DataGridView.Size = new System.Drawing.Size(529, 359);
+            this.DataGridView.TabIndex = 8;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            // 
+            // DataGridContextMenu
+            // 
+            this.DataGridContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Add});
+            this.DataGridContextMenu.Name = "DataGridContextMenu";
+            this.DataGridContextMenu.ShowImageMargin = false;
+            this.DataGridContextMenu.Size = new System.Drawing.Size(156, 48);
+            // 
+            // Add
+            // 
+            this.Add.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddColumn,
+            this.AddRow});
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(155, 22);
+            this.Add.Text = "Ajouter";
+            // 
+            // AddColumn
+            // 
+            this.AddColumn.Name = "AddColumn";
+            this.AddColumn.Size = new System.Drawing.Size(180, 22);
+            this.AddColumn.Text = "Colonne";
+            this.AddColumn.Click += new System.EventHandler(this.AddColumnOnClick);
+            // 
+            // AddRow
+            // 
+            this.AddRow.Name = "AddRow";
+            this.AddRow.Size = new System.Drawing.Size(180, 22);
+            this.AddRow.Text = "Ligne";
+            this.AddRow.Click += new System.EventHandler(this.AddRowOnClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.DataGridView);
             this.Controls.Add(this.PicturePanel);
             this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.FileEncodingLabel);
@@ -840,6 +918,8 @@ namespace NightDrive
             this.PicturePanel.ResumeLayout(false);
             this.PicturePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ZoomUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
+            this.DataGridContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -915,6 +995,15 @@ namespace NightDrive
         private Label PenSize;
         private Label EraserSize;
         private LinkLabel PanelName;
+        private DataGridView DataGridView;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private ContextMenuStrip DataGridContextMenu;
+        private ToolStripMenuItem Add;
+        private ToolStripMenuItem AddColumn;
+        private ToolStripMenuItem AddRow;
     }
 }
 

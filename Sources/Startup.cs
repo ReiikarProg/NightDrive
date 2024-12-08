@@ -56,11 +56,14 @@ namespace NightDrive
             // Init components from the designer & custom ones
             this.InitializeComponent();
 
-            // Init component related to the text editor
+            // Init components related to the text editor
             this.InitializeTextEditor(); 
             
-            // Init component related to the image editor
+            // Init components related to the image editor
             this.InitializeImageEditor();
+
+            // Init components related to the data grid view editor
+            this.InitializeDataGridEditor();
 
             // CreateEmptyFile empty current file
             this.CurrentFile = FileEx.CreateEmptyFile(this, FileFormat.Text);
