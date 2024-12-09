@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Globalization;
 using System.Windows.Forms;
 using NightDrive.Enums;
-using NightDrive.Helpers;
+using NightDrive._Helpers;
 
 namespace NightDrive
 {
@@ -70,17 +69,17 @@ namespace NightDrive
             this.ApplyFontStyle(FontStyle.Bold);
         }
 
-        private void ToolStripLeftAlign_Click(object sender, EventArgs e)
+        private void ToolStripLeftAlignOnClick(object sender, EventArgs e)
         {
             this.ApplyTextAlignment(HorizontalAlignment.Left);
         }
 
-        private void ToolStripCenter_Click(object sender, EventArgs e)
+        private void ToolStripCenterOnClick(object sender, EventArgs e)
         {
             this.ApplyTextAlignment(HorizontalAlignment.Center);
         }
 
-        private void ToolStripRightAlign_Click(object sender, EventArgs e)
+        private void ToolStripRightAlignOnClick(object sender, EventArgs e)
         {
             this.ApplyTextAlignment(HorizontalAlignment.Right);
         }

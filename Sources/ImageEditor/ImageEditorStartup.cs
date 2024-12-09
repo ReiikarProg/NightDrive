@@ -2,7 +2,7 @@
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using NightDrive.Enums;
-using NightDrive.Helpers;
+using NightDrive._Helpers;
 
 namespace NightDrive
 {

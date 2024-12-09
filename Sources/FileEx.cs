@@ -6,10 +6,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
-using Microsoft.SqlServer.Server;
 using NightDrive.Enums;
-using NightDrive.Helpers;
-using NightDrive.Helpers.Interface;
+using NightDrive._Helpers;
 
 namespace NightDrive
 {

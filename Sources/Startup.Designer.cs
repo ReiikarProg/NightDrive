@@ -109,6 +109,9 @@ namespace NightDrive
             this.Add = new System.Windows.Forms.ToolStripMenuItem();
             this.AddColumn = new System.Windows.Forms.ToolStripMenuItem();
             this.AddRow = new System.Windows.Forms.ToolStripMenuItem();
+            this.Delete = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteColumn = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteRow = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuStrip.SuspendLayout();
             this.MainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
@@ -481,7 +484,7 @@ namespace NightDrive
             this.ToolStripLeftAlign.Name = "ToolStripLeftAlign";
             this.ToolStripLeftAlign.Size = new System.Drawing.Size(23, 22);
             this.ToolStripLeftAlign.Text = "Aligner à gauche";
-            this.ToolStripLeftAlign.Click += new System.EventHandler(this.ToolStripLeftAlign_Click);
+            this.ToolStripLeftAlign.Click += new System.EventHandler(this.ToolStripLeftAlignOnClick);
             // 
             // ToolStripCenterAlign
             // 
@@ -492,7 +495,7 @@ namespace NightDrive
             this.ToolStripCenterAlign.Name = "ToolStripCenterAlign";
             this.ToolStripCenterAlign.Size = new System.Drawing.Size(23, 22);
             this.ToolStripCenterAlign.Text = "Centrer";
-            this.ToolStripCenterAlign.Click += new System.EventHandler(this.ToolStripCenter_Click);
+            this.ToolStripCenterAlign.Click += new System.EventHandler(this.ToolStripCenterOnClick);
             // 
             // ToolStripRightAlign
             // 
@@ -503,7 +506,7 @@ namespace NightDrive
             this.ToolStripRightAlign.Name = "ToolStripRightAlign";
             this.ToolStripRightAlign.Size = new System.Drawing.Size(23, 22);
             this.ToolStripRightAlign.Text = "Aligner à droite";
-            this.ToolStripRightAlign.Click += new System.EventHandler(this.ToolStripRightAlign_Click);
+            this.ToolStripRightAlign.Click += new System.EventHandler(this.ToolStripRightAlignOnClick);
             // 
             // Separator4
             // 
@@ -823,6 +826,7 @@ namespace NightDrive
             // 
             // DataGridView
             // 
+            this.DataGridView.AllowUserToOrderColumns = true;
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -830,10 +834,13 @@ namespace NightDrive
             this.Column3,
             this.Column4});
             this.DataGridView.ContextMenuStrip = this.DataGridContextMenu;
-            this.DataGridView.Location = new System.Drawing.Point(69, 109);
+            this.DataGridView.Location = new System.Drawing.Point(65, 109);
+            this.DataGridView.MultiSelect = false;
             this.DataGridView.Name = "DataGridView";
+            this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.DataGridView.Size = new System.Drawing.Size(529, 359);
             this.DataGridView.TabIndex = 8;
+            this.DataGridView.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewOnColumnHeaderMouseDoubleClick);
             // 
             // Column1
             // 
@@ -858,10 +865,11 @@ namespace NightDrive
             // DataGridContextMenu
             // 
             this.DataGridContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Add});
+            this.Add,
+            this.Delete});
             this.DataGridContextMenu.Name = "DataGridContextMenu";
             this.DataGridContextMenu.ShowImageMargin = false;
-            this.DataGridContextMenu.Size = new System.Drawing.Size(156, 48);
+            this.DataGridContextMenu.Size = new System.Drawing.Size(105, 48);
             // 
             // Add
             // 
@@ -869,22 +877,45 @@ namespace NightDrive
             this.AddColumn,
             this.AddRow});
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(155, 22);
+            this.Add.Size = new System.Drawing.Size(104, 22);
             this.Add.Text = "Ajouter";
             // 
             // AddColumn
             // 
             this.AddColumn.Name = "AddColumn";
-            this.AddColumn.Size = new System.Drawing.Size(180, 22);
+            this.AddColumn.Size = new System.Drawing.Size(119, 22);
             this.AddColumn.Text = "Colonne";
             this.AddColumn.Click += new System.EventHandler(this.AddColumnOnClick);
             // 
             // AddRow
             // 
             this.AddRow.Name = "AddRow";
-            this.AddRow.Size = new System.Drawing.Size(180, 22);
+            this.AddRow.Size = new System.Drawing.Size(119, 22);
             this.AddRow.Text = "Ligne";
             this.AddRow.Click += new System.EventHandler(this.AddRowOnClick);
+            // 
+            // Delete
+            // 
+            this.Delete.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DeleteColumn,
+            this.DeleteRow});
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(104, 22);
+            this.Delete.Text = "Supprimer";
+            // 
+            // DeleteColumn
+            // 
+            this.DeleteColumn.Name = "DeleteColumn";
+            this.DeleteColumn.Size = new System.Drawing.Size(119, 22);
+            this.DeleteColumn.Text = "Colonne";
+            this.DeleteColumn.Click += new System.EventHandler(this.DeleteColumnOnClick);
+            // 
+            // DeleteRow
+            // 
+            this.DeleteRow.Name = "DeleteRow";
+            this.DeleteRow.Size = new System.Drawing.Size(119, 22);
+            this.DeleteRow.Text = "Ligne";
+            this.DeleteRow.Click += new System.EventHandler(this.DeleteRowOnClick);
             // 
             // MainForm
             // 
@@ -1004,6 +1035,9 @@ namespace NightDrive
         private ToolStripMenuItem Add;
         private ToolStripMenuItem AddColumn;
         private ToolStripMenuItem AddRow;
+        private ToolStripMenuItem Delete;
+        private ToolStripMenuItem DeleteColumn;
+        private ToolStripMenuItem DeleteRow;
     }
 }
 

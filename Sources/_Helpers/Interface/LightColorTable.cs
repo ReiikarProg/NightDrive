@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NightDrive.Helpers.Interface
+namespace NightDrive._Helpers.Interface
 {
     /// <summary>
     /// Color table used for default (light renderer).

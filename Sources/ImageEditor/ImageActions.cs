@@ -5,7 +5,7 @@ using NightDrive.Enums;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using NightDrive.Helpers;
+using NightDrive._Helpers;
 using System.Drawing.Drawing2D;
 
 namespace NightDrive

@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using NightDrive.Enums;
 
-namespace NightDrive.Helpers
+namespace NightDrive._Helpers
 {
     internal class Logger
     {

@@ -4,8 +4,8 @@ using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using NightDrive.Enums;
-using NightDrive.Helpers;
-using NightDrive.Helpers.Interface;
+using NightDrive._Helpers;
+using NightDrive._Helpers.Interface;
 using NightDrive._Models;
 
 namespace NightDrive

@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace NightDrive.Helpers.Interface
+namespace NightDrive._Helpers.Interface
 {
     /// <summary>
     /// Customized color table used for renderer

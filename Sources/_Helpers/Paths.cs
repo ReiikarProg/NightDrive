@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace NightDrive.Helpers
+namespace NightDrive._Helpers
 {
     public static class Paths
     {

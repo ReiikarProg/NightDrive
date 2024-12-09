@@ -5,9 +5,9 @@ using System.Text;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using NightDrive.Enums;
-using NightDrive.Helpers;
+using NightDrive._Helpers;
 using NightDrive._Models;
-using NightDrive.Helpers.Interface;
+using NightDrive._Helpers.Interface;
 
 namespace NightDrive
 {
@@ -79,6 +79,10 @@ namespace NightDrive
             // Update textbox size to keep the same initial ratio
             this.RichTextBox.Width = this.Width - 40;
             this.RichTextBox.Height = this.Height - 121;
+
+            // Update data grid view to keep the initial ratio
+            this.DataGridView.Width = this.Width - 40;
+            this.DataGridView.Height = this.Height - 121;
 
             // Same with the picture box
             this.PictureBox.Width = this.Width - 40 - this.PicturePanel.Width /* Button panel width */;

@@ -34,3 +34,6 @@ TestResults.xml
 /obj/Debug/NightDrive.csproj.FileListAbsolute.txt
 /obj/Debug/NightDrive.Properties.Resources.resources
 /obj/Debug/NightDrive.MainForm.resources
+/obj/Debug/NightDrive.Helpers.CustomDialogBox.resources
+/obj/Debug/NightDrive.Helpers.CustomDialogBox.resources
+*.resources

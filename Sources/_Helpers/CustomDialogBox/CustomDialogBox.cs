@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Microsoft.SqlServer.Server;
 using NightDrive.Enums;
 
-namespace NightDrive.Helpers
+namespace NightDrive._Helpers
 {
     public class CustomDialogBox : Form
     {
@@ -13,30 +14,67 @@ namespace NightDrive.Helpers
         private Button _validationButton;
         private Panel _panel;
         private Button _cancelButton;
-        private static FileFormat _formatChoice = FileFormat.Unknown;
+        private TextBox _textBox;
 
-        private static FileFormat FormatChoice
-        {
-            get => _formatChoice;
-            set
-            {
-                Logger.Log(LogLevel.Info, $"CustomDialogBox file format changed");
-                _formatChoice = value;
-            }
-        }
+        /// <summary>
+        /// Type of the box
+        /// </summary>
+        private CustomBoxType Type { get; set; }
+
+        /// <summary>
+        /// Value of the user input.
+        /// </summary>
+        private static string UserInput { get; set; } = string.Empty;
+        
+        /// <summary>
+        /// Format choice.
+        /// </summary> 
+        private static FileFormat FormatChoice { get; set; } = FileFormat.Unknown;
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="message"></param>
         /// <param name="comboBoxItem"></param>
-        public CustomDialogBox(string message, object[] comboBoxItem)
+        public CustomDialogBox(string message, object[] comboBoxItem = null)
         {
             this.InitializeComponent();
             this._label.Text = message;
-            this._comboBox.Items.AddRange(comboBoxItem);
+
+            // Text editor
+            if (comboBoxItem == null)
+            {
+                this.Type = CustomBoxType.TextInput;
+                this._textBox.Visible = true;
+                this._comboBox.Visible = false;
+            }
+            // ComboBox choice
+            else
+            {
+                this.Type = CustomBoxType.ChoiceInput;
+                this._comboBox.Visible = true;
+                this._textBox.Visible = false;
+                this._comboBox.Items.AddRange(comboBoxItem);
+            }
         }
-        
+
+        /// <summary>
+        /// Display a message and a text box to the user so that we can retrieve info from him.
+        /// </summary>
+        ///
+        /// <param name="message">Message to display to the user</param>
+        /// 
+        /// <returns></returns>
+        public static string ShowTextBoxToUser(string message)
+        {
+            using (var form = new CustomDialogBox(message))
+            {
+                form.ShowDialog();
+            }
+
+            return UserInput;
+        }
+
         /// <summary>
         /// Show a custom box to the user to select the format of the new created file.
         /// </summary>
@@ -92,23 +130,37 @@ namespace NightDrive.Helpers
         /// <param name="e"></param>
         private void ValidationButtonOnClick(object sender, EventArgs e)
         {
-            // Tells the user to make a choice
-            if (this._comboBox.Text is not ("Text" or "Image"))
+            if (this.Type == CustomBoxType.ChoiceInput)
             {
-                Logger.Log(LogLevel.Info, $"Combo box text: {this._comboBox.Text}");
-                this._label.Text = "Merci de selection un format de fichier avant de valider !";
+                // Tells the user to make a choice
+                if (this._comboBox.Text is not ("Text" or "Image"))
+                {
+                    Logger.Log(LogLevel.Info, $"Combo box text: {this._comboBox.Text}");
+                    this._label.Text = "Merci de selection un format de fichier avant de valider !";
+                }
+                else  // Set the chosen format w.r.t the user selection, then exit
+                {
+                    if (Enum.TryParse(this._comboBox.Text, out FileFormat format))
+                    {
+                        FormatChoice = format;
+                        this.Close();
+                    }
+                    else
+                    {
+                        Logger.Log(LogLevel.Info, $"Failed to parse {this._comboBox.Text} into FileFormat");
+                    }
+                }
             }
-            else  // Set the chosen format w.r.t the user selection, then exit
+            else if (this.Type == CustomBoxType.TextInput)
             {
-                if (Enum.TryParse(this._comboBox.Text, out FileFormat format))
-                {
-                    FormatChoice = format;
-                    this.Close();
-                }
-                else
-                {
-                    Logger.Log(LogLevel.Info, $"Failed to parse {this._comboBox.Text} into FileFormat");
-                }
+                // Set user input
+                Logger.Log(LogLevel.Info, $"User input: {this._textBox.Text}");
+                UserInput = this._textBox.Text;
+                this.Close();
+            }
+            else
+            {
+                Logger.Log(LogLevel.Error, $"Unknown CustomBoxType value: {this.Type}");
             }
         }
 
@@ -125,7 +177,7 @@ namespace NightDrive.Helpers
         }
 
         /// <summary>
-        /// // Forces the focus on the Validation button when the user select something on the ComboBox
+        /// Forces the focus on the Validation button when the user select something on the ComboBox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -152,6 +204,7 @@ namespace NightDrive.Helpers
             this._validationButton = new System.Windows.Forms.Button();
             this._panel = new System.Windows.Forms.Panel();
             this._cancelButton = new System.Windows.Forms.Button();
+            this._textBox = new System.Windows.Forms.TextBox();
             this._panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -191,6 +244,7 @@ namespace NightDrive.Helpers
             // _panel
             // 
             this._panel.BackColor = System.Drawing.Color.LightGray;
+            this._panel.Controls.Add(this._textBox);
             this._panel.Controls.Add(this._cancelButton);
             this._panel.Controls.Add(this._comboBox);
             this._panel.Controls.Add(this._validationButton);
@@ -211,6 +265,13 @@ namespace NightDrive.Helpers
             this._cancelButton.UseVisualStyleBackColor = false;
             this._cancelButton.Click += new System.EventHandler(this.CancelButtonOnClick);
             // 
+            // _textBox
+            // 
+            this._textBox.Location = new System.Drawing.Point(23, 9);
+            this._textBox.Name = "_textBox";
+            this._textBox.Size = new System.Drawing.Size(86, 20);
+            this._textBox.TabIndex = 4;
+            // 
             // CustomDialogBox
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -227,6 +288,7 @@ namespace NightDrive.Helpers
             this.Text = "NightDrive";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomDialogBoxOnFormClosing);
             this._panel.ResumeLayout(false);
+            this._panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
