@@ -44,7 +44,7 @@ namespace NightDrive._Helpers
         }
 
         /// <summary>
-        /// Write input data to the log file.
+        /// Save input data to the log file.
         /// </summary>
         /// <param name="level"></param>
         /// <param name="data"></param>
@@ -61,7 +61,7 @@ namespace NightDrive._Helpers
                 _ => throw new ArgumentOutOfRangeException(nameof(level), level, null)
             };
 
-            // Write a new line
+            // Save a new line
             string text = $"{logLevel} - {DateTime.Now} - {data}";
             File.AppendAllText(fileFullPath, $"\n{text}");
 

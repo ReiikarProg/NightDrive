@@ -82,7 +82,7 @@ namespace NightDrive._Helpers
         public static FileFormat ShowTextFormatSelector()
         {
             string message = $"Merci de séléctionner le format de fichier que vous souhaitez créer ci-dessous, puis cliquez sur \"Ok\"";
-            object[] comboBoxItem = new [] { "Text", "Image" };
+            object[] comboBoxItem = new [] { "Text", "Image", "Grid" };
 
             using (var form = new CustomDialogBox(message, comboBoxItem))
             {
@@ -133,7 +133,7 @@ namespace NightDrive._Helpers
             if (this.Type == CustomBoxType.ChoiceInput)
             {
                 // Tells the user to make a choice
-                if (this._comboBox.Text is not ("Text" or "Image"))
+                if (this._comboBox.Text is not ("Text" or "Image" or "Grid"))
                 {
                     Logger.Log(LogLevel.Info, $"Combo box text: {this._comboBox.Text}");
                     this._label.Text = "Merci de selection un format de fichier avant de valider !";
@@ -203,8 +203,8 @@ namespace NightDrive._Helpers
             this._comboBox = new System.Windows.Forms.ComboBox();
             this._validationButton = new System.Windows.Forms.Button();
             this._panel = new System.Windows.Forms.Panel();
-            this._cancelButton = new System.Windows.Forms.Button();
             this._textBox = new System.Windows.Forms.TextBox();
+            this._cancelButton = new System.Windows.Forms.Button();
             this._panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -236,7 +236,6 @@ namespace NightDrive._Helpers
             this._validationButton.Name = "_validationButton";
             this._validationButton.Size = new System.Drawing.Size(57, 21);
             this._validationButton.TabIndex = 2;
-            this._validationButton.TabStop = false;
             this._validationButton.Text = "Ok";
             this._validationButton.UseVisualStyleBackColor = false;
             this._validationButton.Click += new System.EventHandler(this.ValidationButtonOnClick);
@@ -253,6 +252,13 @@ namespace NightDrive._Helpers
             this._panel.Size = new System.Drawing.Size(250, 51);
             this._panel.TabIndex = 3;
             // 
+            // _textBox
+            // 
+            this._textBox.Location = new System.Drawing.Point(23, 9);
+            this._textBox.Name = "_textBox";
+            this._textBox.Size = new System.Drawing.Size(86, 20);
+            this._textBox.TabIndex = 1;
+            // 
             // _cancelButton
             // 
             this._cancelButton.BackColor = System.Drawing.Color.White;
@@ -260,17 +266,9 @@ namespace NightDrive._Helpers
             this._cancelButton.Name = "_cancelButton";
             this._cancelButton.Size = new System.Drawing.Size(57, 21);
             this._cancelButton.TabIndex = 3;
-            this._cancelButton.TabStop = false;
             this._cancelButton.Text = "Annuler";
             this._cancelButton.UseVisualStyleBackColor = false;
             this._cancelButton.Click += new System.EventHandler(this.CancelButtonOnClick);
-            // 
-            // _textBox
-            // 
-            this._textBox.Location = new System.Drawing.Point(23, 9);
-            this._textBox.Name = "_textBox";
-            this._textBox.Size = new System.Drawing.Size(86, 20);
-            this._textBox.TabIndex = 4;
             // 
             // CustomDialogBox
             // 

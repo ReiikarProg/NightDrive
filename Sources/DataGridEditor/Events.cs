@@ -18,5 +18,19 @@ namespace NightDrive
             this.DataGridView.Columns[e.ColumnIndex].HeaderText = CustomDialogBox.ShowTextBoxToUser(
                 "Merci de saisir le nouveau nom de la colonne");
         }
+
+        /// <summary>
+        /// On cell click, mark the file as unsaved.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridViewOnCellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.CurrentFile is { IsSaved: true })
+            {
+                this.CurrentFile.IsSaved = false;
+                this.UpdateHeader();
+            }
+        }
     }
 }

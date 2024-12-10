@@ -6,8 +6,10 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using NightDrive.Enums;
 using NightDrive._Helpers;
+using NightDrive._Models;
 
 namespace NightDrive
 {
@@ -56,7 +58,7 @@ namespace NightDrive
         /// <summary>
         /// List of accepted file format.
         /// </summary>
-        private static string[] AcceptedFormat = new[] { "txt", "rtf", "jpg" };
+        private static string[] AcceptedFormat = new[] { "txt", "rtf", "jpg", "dgv" };
 
         #region Private/Internal methods
         /// <summary>
@@ -72,6 +74,7 @@ namespace NightDrive
                 FileFormat.Text => nameWithoutExtension + ".txt",
                 FileFormat.RichText => nameWithoutExtension + ".rtf",
                 FileFormat.Image => nameWithoutExtension + ".jpg",
+                FileFormat.Grid => nameWithoutExtension + ".dgv",
                 _ => throw new Exception($"Unsupported file format")
             };
 
@@ -184,6 +187,7 @@ namespace NightDrive
                         "txt" => FileFormat.Text,
                         "rtf" => FileFormat.RichText,
                         "jpg" => FileFormat.Image,
+                        "dgv" => FileFormat.Grid,
                             _ => FileFormat.Unknown
                     };
 
@@ -265,6 +269,17 @@ namespace NightDrive
                             
                         Logger.Log(LogLevel.Info, "[FileEx] - Successfully loaded .jpg file");
                     }
+                    else if (this.Format == FileFormat.Grid)
+                    {
+                        GridEditorModel model = JsonConvert.DeserializeObject<GridEditorModel>(File.ReadAllText(this.AbsolutePath, enc));
+                        this.ParentMainForm.InitializeDataGridEditor(model);
+
+                        Logger.Log(LogLevel.Info, "[FileEx] - Successfully loaded .dgv file");
+                    }
+                    else
+                    {
+                        Logger.Log(LogLevel.Warning, $"[FileEx] - Unknown format [{this.Format}]");
+                    }
                 }
                 else
                 {
@@ -278,9 +293,9 @@ namespace NightDrive
         }
 
         /// <summary>
-        /// (Over) Write the file data.
+        /// (Over) Save the file data.
         /// </summary>
-        internal void Write()
+        internal void Save()
         {
             try
             {
@@ -294,7 +309,7 @@ namespace NightDrive
                     }
                     // Else, the file will be created
 
-                    // Write data to the file
+                    // Save data to the file
                     using (var fileStream = new FileStream(this.AbsolutePath, FileMode.OpenOrCreate))
                     {
                         using (var writer = new StreamWriter(fileStream))
@@ -330,10 +345,39 @@ namespace NightDrive
 
                     Logger.Log(LogLevel.Info, $"{this.AbsolutePath} successfully saved");
                 }
+                else if (this.Format == FileFormat.Grid)
+                {
+                    // Get model object to be serialized
+                    GridEditorModel gridModel = Tools.GetGridDataToSave(this.ParentMainForm.DataGridView);
+                    string dataToSave =  JsonConvert.SerializeObject(gridModel);
+
+                    Logger.Log(LogLevel.Info, $"Data to be saved: {dataToSave}");
+
+                    // Delete the file if there's already one
+                    if (File.Exists(this.AbsolutePath))
+                    {
+                        File.Delete(this.AbsolutePath);
+                    }
+                    // Else, the file will be created
+
+                    // Save data to the file
+                    using (var fileStream = new FileStream(this.AbsolutePath, FileMode.OpenOrCreate))
+                    {
+                        using (var writer = new StreamWriter(fileStream))
+                        {
+                            writer.Write(dataToSave);
+                        }
+                    }
+
+                    // Mark the file as saved
+                    this.IsSaved = true;
+
+                    Logger.Log(LogLevel.Info, $"{this.AbsolutePath} successfully saved");
+                }
                 else
                 {
                     Logger.Log(LogLevel.Warning,
-                        $"Failed to (over) write file as its format is not supported (yet) (format: {this.Format}");
+                        $"Failed to (over) write file as its format is not supported (yet) (format: {this.Format})");
                 }
             }
             catch (Exception ex)

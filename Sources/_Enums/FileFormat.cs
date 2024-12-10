@@ -23,8 +23,13 @@
         RichText = 2,
 
         /// <summary>
-        /// jpg file/
+        /// JPG file.
         /// </summary>
         Image = 3,
+
+        /// <summary>
+        /// Data grid view file (dgv).
+        /// </summary>
+        Grid = 4
     }
 }

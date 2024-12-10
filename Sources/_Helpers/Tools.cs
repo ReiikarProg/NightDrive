@@ -1,12 +1,11 @@
 ﻿using System;
-using Newtonsoft.Json.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using NightDrive.Enums;
-using System.Drawing.Drawing2D;
 using System.Drawing;
 using System.Collections.Generic;
+using NightDrive._Models;
 
 namespace NightDrive._Helpers
 {
@@ -31,6 +30,59 @@ namespace NightDrive._Helpers
                 stackPoint.Push(new Point(x, y));
                 bitmap.SetPixel(x, y, newColor);
             }
+        }
+
+        /// <summary>
+        /// Get currently set data in the data grid view and return a model to be serialized.
+        /// </summary>
+        /// 
+        /// <returns>GridEditorModel to serialize before saving.</returns>
+        public static GridEditorModel GetGridDataToSave(DataGridView grid)
+        {
+            Logger.Log(LogLevel.Info, $"Preparing data grid object before saving");
+
+            GridEditorModel model = new()
+            {
+                RowCount = grid.RowCount,
+                ColumnCount = grid.ColumnCount,
+            };
+
+            // A list of several columns
+            List<GridEditorColumnModel> columnList = new();
+
+            // Create a GridEditorColumnModel for each column in the Grid
+            foreach (DataGridViewColumn c in grid.Columns)
+            {
+                // List of row values for that column
+                List<string> dataList = new();
+
+                // Current column object
+                GridEditorColumnModel currentColumn = new()
+                {
+                    Id = c.Index,
+                    HeaderName = c.HeaderText,
+                    RowNumber = model.RowCount
+                };
+
+                // Loop all rows 
+                foreach (DataGridViewRow row in grid.Rows)
+                {
+                    dataList.Add(row.Cells[currentColumn.Id].Value?.ToString() ?? string.Empty);
+                }
+
+                // Add data to the column object
+                currentColumn.DataList = dataList;
+
+                // Add column to the column list
+                columnList.Add(currentColumn);
+            }
+
+            // Add column list to the final model
+            model.ColumnList = columnList;
+
+            Logger.Log(LogLevel.Info, $"GridModel to save: {model}");
+
+            return model;
         }
 
         /// <summary>
@@ -126,6 +178,7 @@ namespace NightDrive._Helpers
                 FileFormat.Text => "Normal text file",
                 FileFormat.RichText => "Rich text file",
                 FileFormat.Image => "Image file",
+                FileFormat.Grid => "Grid view file",
                 _ => throw new Exception("Unsupported file format")
             };
 

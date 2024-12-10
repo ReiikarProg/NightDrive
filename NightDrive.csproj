@@ -120,6 +120,7 @@
     <Compile Include="Sources\TextEditor\Events\ToolStripEvents.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Sources\_Models\GridEditorColumnModel.cs" />
     <Compile Include="Sources\_Models\GridEditorModel.cs" />
     <Compile Include="Sources\_Models\SettingsModel.cs" />
     <Compile Include="Sources\Program.cs" />

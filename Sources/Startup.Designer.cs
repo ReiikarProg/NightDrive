@@ -840,6 +840,7 @@ namespace NightDrive
             this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.DataGridView.Size = new System.Drawing.Size(529, 359);
             this.DataGridView.TabIndex = 8;
+            this.DataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewOnCellClick);
             this.DataGridView.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewOnColumnHeaderMouseDoubleClick);
             // 
             // Column1
@@ -1026,7 +1027,7 @@ namespace NightDrive
         private Label PenSize;
         private Label EraserSize;
         private LinkLabel PanelName;
-        private DataGridView DataGridView;
+        internal DataGridView DataGridView;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;

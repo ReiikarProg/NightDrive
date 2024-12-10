@@ -99,6 +99,7 @@ namespace NightDrive
 
             if (format is FileFormat.Text /* Text or RichText are considered the same */)
             {
+                // Text components
                 this.RichTextBox.Visible = true;
                 this.ToolStripPoliceFamily.Visible = true;
                 this.ToolStripPoliceSize.Visible = true;
@@ -115,11 +116,16 @@ namespace NightDrive
                 this.ToolStripPrevious.Visible = true;
                 this.ToolStripColor.Visible = true;
 
+                // Image components
                 this.PictureBox.Visible = false;
                 this.PicturePanel.Visible = false;
+
+                // Grid view components
+                this.DataGridView.Visible = false;
             }
             else if (format == FileFormat.Image)
             {
+                // Text components
                 this.RichTextBox.Visible = false;
                 this.ToolStripPoliceFamily.Visible = false;
                 this.ToolStripPoliceSize.Visible = false;
@@ -136,8 +142,38 @@ namespace NightDrive
                 this.ToolStripPrevious.Visible = false;
                 this.ToolStripColor.Visible = false;
 
+                // Image components
                 this.PictureBox.Visible = true; 
                 this.PicturePanel.Visible = true;
+
+                // Grid view components
+                this.DataGridView.Visible = false;
+            }
+            else if (format == FileFormat.Grid)
+            {
+                // Text components
+                this.RichTextBox.Visible = false;
+                this.ToolStripPoliceFamily.Visible = false;
+                this.ToolStripPoliceSize.Visible = false;
+                this.ToolStripBold.Visible = false;
+                this.ToolStripItalic.Visible = false;
+                this.ToolStripUnderline.Visible = false;
+                this.ToolStripLeftAlign.Visible = false;
+                this.ToolStripRightAlign.Visible = false;
+                this.ToolStripCenterAlign.Visible = false;
+                this.Separator2.Visible = false;
+                this.Separator3.Visible = false;
+                this.Separator4.Visible = false;
+                this.ToolStripNext.Visible = false;
+                this.ToolStripPrevious.Visible = false;
+                this.ToolStripColor.Visible = false;
+
+                // Image components
+                this.PictureBox.Visible = false;
+                this.PicturePanel.Visible = false;
+
+                // Grid view components
+                this.DataGridView.Visible = true;
             }
             else
             {

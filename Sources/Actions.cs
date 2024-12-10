@@ -8,7 +8,7 @@ namespace NightDrive
     public partial class MainForm : Form
     {
         /// <summary>
-        /// Write current file, if possible
+        /// Save current file, if possible
         /// </summary>
         /// <param name="saveAs">If true, just save at the current location, otherwise prompt the user to choose the path</param>
         private void Save(bool saveAs = true)
@@ -52,7 +52,7 @@ namespace NightDrive
                     Logger.Log(LogLevel.Info, $"Saving file at {this.CurrentFile.AbsolutePath}");
 
                     // Do the real saving
-                    this.CurrentFile.Write();
+                    this.CurrentFile.Save();
                     this.UpdateHeader();
                 }
                 // Else, operation got canceled
@@ -94,7 +94,21 @@ namespace NightDrive
                 }
                 else if (filename.EndsWith(".png"))
                 {
+                    // TODO: support JPG files
                     Logger.Log(LogLevel.Info, "PNG files are not supported yet");
+                }
+                else if (filename.EndsWith(".dgv"))
+                {
+                    Logger.Log(LogLevel.Info, "Trying to open dgv files");
+
+                    // Activate the format
+                    this.ActivateFormat(FileFormat.Grid);
+
+                    // Update current file
+                    this.CurrentFile = FileEx.Create(this, this.OpenFileDialogBox.FileName);
+
+                    // Open the file
+                    this.CurrentFile.Open();
                 }
                 else
                 {
@@ -161,6 +175,19 @@ namespace NightDrive
 
                     // Re-init image editor components
                     this.InitializeImageEditor();
+                    break;
+
+                case FileFormat.Grid:
+
+                    // Activate the format
+                    this.ActivateFormat(FileFormat.Grid);
+
+                    // Create new grid view file
+                    this.CurrentFile = FileEx.Create(this,"", "nouveau", FileFormat.Grid, FileEncoding.None, false);
+
+                    // Set back data grid view 
+                    this.InitializeDataGridEditor();
+
                     break;
             }
 

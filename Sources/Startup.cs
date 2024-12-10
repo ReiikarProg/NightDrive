@@ -121,7 +121,7 @@ namespace NightDrive
                 string jsonConfig = JsonConvert.SerializeObject(this.AppLastFile);
 
                 // Edit and save the config file
-                // Write data to the file
+                // Save data to the file
                 using (var fileStream = new FileStream(configPath, FileMode.OpenOrCreate))
                 {
                     using (var writer = new StreamWriter(fileStream))
@@ -164,6 +164,11 @@ namespace NightDrive
                     case FileFormat.Image:
                         // Activate "image" format
                         this.ActivateFormat(FileFormat.Image);
+                        break;
+                    // Grid view file
+                    case FileFormat.Grid:
+                        // Active "grid" format
+                        this.ActivateFormat(FileFormat.Grid);
                         break;
 
                     default:
