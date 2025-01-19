@@ -379,6 +379,13 @@ namespace NightDrive
                     this.ColorChoiceButton.BackgroundImage = Properties.Resources.ColorDark;
                     this.FillButton.BackgroundImage = Properties.Resources.FillDark;
 
+                    /*
+                     * Grid edition features
+                     */
+
+                    this.DataGridView.RowsDefaultCellStyle = GridInterfacePresets.DarkCellStyle;
+                    this.DataGridView.BackgroundColor = MainForm.GetGrayColorVariantFromInt(75);
+
                     break;
 
                 case Theme.Default:
@@ -489,6 +496,14 @@ namespace NightDrive
                     this.EllipseButton.BackgroundImage = Properties.Resources.Circle;
                     this.ColorChoiceButton.BackgroundImage = Properties.Resources.Color;
                     this.FillButton.BackgroundImage = Properties.Resources.Fill;
+
+
+                    /*
+                     * Grid edition features
+                     */
+
+                    this.DataGridView.RowsDefaultCellStyle = GridInterfacePresets.DefaultCellStyle;
+                    this.DataGridView.BackgroundColor = MainForm.GetGrayColorVariantFromInt(200);
 
                     break;
             }

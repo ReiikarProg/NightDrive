@@ -56,7 +56,7 @@ namespace NightDrive
                 this.CurrentFile.IsSaved = false;
                 this.UpdateHeader();
             }
-            
+
             // Update file length in the footnotes
             this.FileLenghtLabel.Text = $"length: {this.RichTextBox.Text.Length} lines: {this.RichTextBox.Lines.Length}";
         }

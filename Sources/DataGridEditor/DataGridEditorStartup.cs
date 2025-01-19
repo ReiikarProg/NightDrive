@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using NightDrive._Helpers;
+using NightDrive._Helpers.Interface;
 using NightDrive._Models;
 using NightDrive.Enums;
 
@@ -43,6 +44,12 @@ namespace NightDrive
 
             // Switch selection mode to full column
             this.DataGridView.SelectionMode = DataGridViewSelectionMode.ColumnHeaderSelect;
+
+            // Allow the possibility to write multi lines
+            foreach (DataGridViewColumn col in this.DataGridView.Columns)
+            {
+                col.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            }
         }
 
         /// <summary>
@@ -102,6 +109,12 @@ namespace NightDrive
                 {
                     this.DataGridView.Rows[j].Cells[i].Value = currentList[j];
                 }
+            }
+
+            // Allow the possibility to write multi lines
+            foreach (DataGridViewColumn col in this.DataGridView.Columns)
+            {
+                col.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             }
         }
     }

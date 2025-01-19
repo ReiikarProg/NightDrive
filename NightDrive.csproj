@@ -83,6 +83,7 @@
     <Compile Include="Sources\_Helpers\CustomDialogBox\CustomBoxType.cs" />
     <Compile Include="Sources\_Helpers\Interface\DarkColorTable.cs" />
     <Compile Include="Sources\_Helpers\Interface\FontEx.cs" />
+    <Compile Include="Sources\_Helpers\Interface\GridInterfacePresets.cs" />
     <Compile Include="Sources\_Helpers\Interface\LightColorTable.cs" />
     <Compile Include="Sources\_Helpers\Tools.cs" />
     <Compile Include="Sources\_Helpers\Paths.cs" />
