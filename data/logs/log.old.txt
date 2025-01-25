@@ -1,0 +1,37 @@
+          --- Welcome to NightDrive logs file :) ---
+
+This file was created on : 25/01/2025 11:12:28
+
+INFO - 25/01/2025 11:12:28 - Text editor init done
+INFO - 25/01/2025 11:12:28 - New image loaded, original size: {Width=533, Height=379} (old: {Width=0, Height=0}
+INFO - 25/01/2025 11:12:28 - Updating drawing pen width (1 => 1)
+INFO - 25/01/2025 11:12:28 - Updating eraser pen width (15 => 15)
+INFO - 25/01/2025 11:12:28 - Image editor init done
+INFO - 25/01/2025 11:12:28 - Current file changed (format: Text)
+INFO - 25/01/2025 11:12:28 - Loading last file config from E:\Visual Studio\Projects\NightDrive\data\config\lastFileConfig.json
+INFO - 25/01/2025 11:12:28 - Retrieved config:
+{"lastFileName":"TestImage","lastFileLocation":"C:\\Users\\mathi\\Documents\\Coding\\NightDrive\\Saves","lastFileFormat":"Image","lastFileEncoding":"Utf8"}
+INFO - 25/01/2025 11:12:28 - Loading app settingsModel from E:\Visual Studio\Projects\NightDrive\data\config\settings.json
+INFO - 25/01/2025 11:12:28 - Loaded settingsModel from saved json file:
+{"themeColor":1}
+INFO - 25/01/2025 11:12:28 - Applying theme "Dark" to the application
+INFO - 25/01/2025 11:12:28 - Last opened file properties:  format -> Image, encoding: Utf8
+INFO - 25/01/2025 11:12:28 - Activating format: Image
+INFO - 25/01/2025 11:12:28 - Current file changed (format: Image)
+INFO - 25/01/2025 11:12:28 - [FileEx] - Loading Image file located at "C:\Users\mathi\Documents\Coding\NightDrive\Saves\TestImage.jpg" with encoding Utf8
+WARN - 25/01/2025 11:12:28 - [FileEx] - Failed to load C:\Users\mathi\Documents\Coding\NightDrive\Saves\TestImage.jpg as it doesn't exist
+INFO - 25/01/2025 11:12:28 - ----- App Init done -----
+INFO - 25/01/2025 11:13:01 - Creating a new file (format: Image)
+INFO - 25/01/2025 11:13:01 - Activating format: Image
+INFO - 25/01/2025 11:13:01 - Current file changed (format: Image)
+INFO - 25/01/2025 11:13:01 - New image loaded, original size: {Width=533, Height=379} (old: {Width=533, Height=379}
+INFO - 25/01/2025 11:13:01 - Image editor init done
+INFO - 25/01/2025 11:13:07 - Image editor action changed: None => Pencil
+INFO - 25/01/2025 11:13:08 - Image editor action changed: Pencil => Pencil
+INFO - 25/01/2025 11:13:41 - [FileEx - Create] File with format "Image"
+INFO - 25/01/2025 11:13:41 - Current file changed (format: Image)
+INFO - 25/01/2025 11:13:41 - Saving file at E:\Visual Studio\Projects\NightDrive\data\saves\testing_save.jpg
+INFO - 25/01/2025 11:13:41 - E:\Visual Studio\Projects\NightDrive\data\saves\testing_save.jpg successfully saved
+INFO - 25/01/2025 11:14:05 - Opening file located at "C:\Users\Mathieu\OneDrive\Bureau\Maison\Plan_elec\Plan_elec_etage.png" ...
+INFO - 25/01/2025 11:14:05 - PNG files are not supported yet
+INFO - 25/01/2025 11:14:32 - Settings saved

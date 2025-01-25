@@ -1,0 +1,36 @@
+          --- Welcome to NightDrive logs file :) ---
+
+This file was created on : 25/01/2025 11:16:50
+
+INFO - 25/01/2025 11:16:51 - Text editor init done
+INFO - 25/01/2025 11:16:51 - New image loaded, original size: {Width=533, Height=379} (old: {Width=0, Height=0}
+INFO - 25/01/2025 11:16:51 - Updating drawing pen width (1 => 1)
+INFO - 25/01/2025 11:16:51 - Updating eraser pen width (15 => 15)
+INFO - 25/01/2025 11:16:51 - Image editor init done
+INFO - 25/01/2025 11:16:51 - Current file changed (format: Text)
+INFO - 25/01/2025 11:16:51 - Loading last file config from E:\Visual Studio\Projects\NightDrive\data\config\lastFileConfig.json
+INFO - 25/01/2025 11:16:51 - Retrieved config:
+{"lastFileName":"testing_save","lastFileLocation":"E:\\Visual Studio\\Projects\\NightDrive\\data\\saves","lastFileFormat":"Image","lastFileEncoding":"Utf8"}
+INFO - 25/01/2025 11:16:51 - Loading app settingsModel from E:\Visual Studio\Projects\NightDrive\data\config\settings.json
+INFO - 25/01/2025 11:16:51 - Loaded settingsModel from saved json file:
+{"themeColor":1}
+INFO - 25/01/2025 11:16:51 - Applying theme "Dark" to the application
+INFO - 25/01/2025 11:16:51 - Last opened file properties:  format -> Image, encoding: Utf8
+INFO - 25/01/2025 11:16:51 - Activating format: Image
+INFO - 25/01/2025 11:16:51 - Current file changed (format: Image)
+INFO - 25/01/2025 11:16:51 - [FileEx] - Loading Image file located at "E:\Visual Studio\Projects\NightDrive\data\saves\testing_save.jpg" with encoding Utf8
+INFO - 25/01/2025 11:16:51 - [FileEx] - Image size: {Width=533, Height=379}
+INFO - 25/01/2025 11:16:51 - New image loaded, original size: {Width=533, Height=379} (old: {Width=533, Height=379}
+INFO - 25/01/2025 11:16:51 - [FileEx] - Successfully loaded .jpg file
+INFO - 25/01/2025 11:16:51 - ----- App Init done -----
+INFO - 25/01/2025 11:17:02 - Creating a new file (format: Text)
+INFO - 25/01/2025 11:17:02 - Activating format: Text
+INFO - 25/01/2025 11:17:02 - Current file changed (format: Text)
+INFO - 25/01/2025 11:17:05 - Select index changed on Police family combo box, apply new police family
+INFO - 25/01/2025 11:17:05 - Trying to apply font family: Microsoft Sans Serif
+INFO - 25/01/2025 11:17:05 - Switching "nouveau" into a rtf file
+INFO - 25/01/2025 11:17:05 - Current file switched to .rtf, updating headers
+INFO - 25/01/2025 11:17:30 - [FileEx - Create] File with format "RichText"
+INFO - 25/01/2025 11:17:30 - Current file changed (format: RichText)
+INFO - 25/01/2025 11:17:30 - Saving file at E:\Visual Studio\Projects\NightDrive\data\saves\sample.rtf
+INFO - 25/01/2025 11:17:32 - Settings saved

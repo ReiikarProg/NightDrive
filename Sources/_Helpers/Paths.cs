@@ -7,17 +7,17 @@ namespace NightDrive._Helpers
         /// <summary>
         /// Absolute Path
         /// </summary>
-        public const string AbsolutePath = @"C:\Users\mathi\Documents\Coding\NightDrive\";
+        public const string AbsolutePath = @"E:\Visual Studio\Projects\NightDrive\data\";
 
         /// <summary>
         /// Default saving location path
         /// </summary>
-        public const string SaveLocation = "Saves";
+        public const string SaveLocation = "saves";
 
         /// <summary>
         /// Default logs location path
         /// </summary>
-        public const string LogsLocation = "Logs";
+        public const string LogsLocation = "logs";
 
         /// <summary>
         /// LastFileModel json file path

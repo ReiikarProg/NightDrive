@@ -139,18 +139,18 @@
     <EmbeddedResource Include="Sources\Startup.resx">
       <DependentUpon>Startup.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="config\lastFileConfig.json" />
-    <None Include="config\settings.json" />
+    <None Include="data\config\lastFileConfig.json" />
+    <None Include="data\config\settings.json" />
     <None Include="Properties\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Saves\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="AppIcon.ico" />
+    <Content Include="data\logs\log.txt" />
+    <Content Include="data\saves\testing_save.jpg" />
     <None Include="Resources\Pictures\ColorDark.png" />
     <None Include="Resources\Pictures\Color.png" />
     <None Include="Resources\Pictures\Fill.png" />
